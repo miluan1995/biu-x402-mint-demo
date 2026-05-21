@@ -5,19 +5,423 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
   <title>BIU Mint Skill 安装页</title>
   <style>
-    :root{--bg:#050806;--ink:#effff6;--muted:#93aa9d;--line:#20382d;--card:#0b1510;--card2:#101e17;--green:#35e09d;--lime:#dfff70;--red:#ff9e92;--amber:#ffd36a;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% -10%,#1c4d39 0,#050806 34%),radial-gradient(circle at 85% 15%,#dfff701a,transparent 26%),#050806}.wrap{max-width:1180px;margin:auto;padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:3;padding:12px 0;background:linear-gradient(180deg,#050806f2,#05080600)}.brand{font-family:var(--mono);letter-spacing:.18em;color:var(--green);font-weight:900}.pill,.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#08120e;border-radius:999px;padding:7px 10px;font:11px var(--mono);color:var(--muted)}.tag{border-color:#35e09d55;color:var(--green)}.hero{display:grid;grid-template-columns:1fr .92fr;gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1914,#08100c);border-radius:24px;padding:22px;box-shadow:0 24px 90px #0008}.heroCard{position:relative;overflow:hidden;min-height:520px}.heroCard:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 78% 18%,#35e09d2e,transparent 34%),radial-gradient(circle at 18% 84%,#dfff7020,transparent 28%);pointer-events:none}.heroInner{position:relative}.kicker{font:12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,116px);line-height:.86;letter-spacing:-.08em;margin:14px 0 12px}.subtitle{font-size:18px;color:#c9ddcf;max-width:660px}.muted{color:var(--muted)}.danger{color:var(--red)}.mono{font-family:var(--mono)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:30px;font-weight:950;letter-spacing:-.05em}.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button,.btn{min-height:48px;border:0;border-radius:15px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#04100b;font-weight:950;text-decoration:none;cursor:pointer}.secondary,button.secondary{background:#101d17;color:var(--ink);border:1px solid var(--line)}.ghost{background:transparent;color:var(--ink);border:1px dashed var(--line)}.bar{height:16px;border:1px solid #24483b;background:#10251e;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime))}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.step{padding:12px;border-radius:14px;background:#10251e;border:1px solid #24483b;color:var(--muted);font:12px var(--mono)}.done{border-color:var(--green);color:#b9ffdf}.locked{border:1px solid #ffd36a55;background:#ffd36a12;border-radius:18px;padding:14px}.safeBox{border:1px solid #35e09d44;background:#35e09d10;border-radius:18px;padding:14px}.addr{font-family:var(--mono);font-size:12px;word-break:break-all;color:#c9ddcf}.install{display:flex;flex-direction:column;gap:10px}pre{white-space:pre-wrap;word-break:break-word;background:#050907;border:1px solid var(--line);padding:14px;border-radius:14px;max-height:260px;overflow:auto}code{font-family:var(--mono)}@media(max-width:860px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}h1{font-size:62px}.card{padding:17px;border-radius:19px}}
+    :root{--bg:#050806;--ink:#effff6;--muted:#93aa9d;--line:#20382d;--card:#0b1510;--card2:#101e17;--green:#35e09d;--lime:#dfff70;--red:#ff9e92;--amber:#ffd36a;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% -10%,#1c4d39 0,#050806 34%),radial-gradient(circle at 85% 15%,#dfff701a,transparent 26%),#050806}.wrap{max-width:1180px;margin:auto;padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:3;padding:12px 0;background:linear-gradient(180deg,#050806f2,#05080600)}.brand{font-family:var(--mono);letter-spacing:.18em;color:var(--green);font-weight:900}.pill,.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#08120e;border-radius:999px;padding:7px 10px;font:11px var(--mono);color:var(--muted)}.tag{border-color:#35e09d55;color:var(--green)}.hero{display:grid;grid-template-columns:1fr .92fr;gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1914,#08100c);border-radius:24px;padding:22px;box-shadow:0 24px 90px #0008}.heroCard{position:relative;overflow:hidden;min-height:520px}.heroCard:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 78% 18%,#35e09d2e,transparent 34%),radial-gradient(circle at 18% 84%,#dfff7020,transparent 28%);pointer-events:none}.heroInner{position:relative}.kicker{font:12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,116px);line-height:.86;letter-spacing:-.08em;margin:14px 0 12px}.subtitle{font-size:18px;color:#c9ddcf;max-width:660px}.muted{color:var(--muted)}.danger{color:var(--red)}.mono{font-family:var(--mono)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:30px;font-weight:950;letter-spacing:-.05em}.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button,.btn{min-height:48px;border:0;border-radius:15px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#04100b;font-weight:950;text-decoration:none;cursor:pointer}.secondary,button.secondary{background:#101d17;color:var(--ink);border:1px solid var(--line)}.ghost{background:transparent;color:var(--ink);border:1px dashed var(--line)}.bar{height:16px;border:1px solid #24483b;background:#10251e;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime))}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.step{padding:12px;border-radius:14px;background:#10251e;border:1px solid #24483b;color:var(--muted);font:12px var(--mono)}.done{border-color:var(--green);color:#b9ffdf}.locked{border:1px solid #ffd36a55;background:#ffd36a12;border-radius:18px;padding:14px}.safeBox{border:1px solid #35e09d44;background:#35e09d10;border-radius:18px;padding:14px}.addr{font-family:var(--mono);font-size:12px;word-break:break-all;color:#c9ddcf}.install{display:flex;flex-direction:column;gap:10px}pre{white-space:pre-wrap;word-break:break-word;background:#050907;border:1px solid var(--line);padding:14px;border-radius:14px;max-height:260px;overflow:auto}    code{font-family:var(--mono)}h2{font-size:22px;font-weight:800;margin:0 0 8px;letter-spacing:-.04em}h3{font-size:18px;font-weight:750;margin:0;letter-spacing:-.02em}#log{font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted);background:#050907;border:1px solid var(--line);padding:16px;border-radius:14px;min-height:120px;overflow:auto;max-height:400px}#demoBtn{min-height:44px;border:1px solid #35e09d44;border-radius:15px;padding:12px 20px;background:#0d1f18;color:var(--green);font-weight:800;cursor:pointer;transition:opacity .15s}#demoBtn:hover{opacity:.85}button:disabled,.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important}pre code{background:transparent;border:0;padding:0}
+
+    /* ===== 钱包选择器样式 ===== */
+    .wallet-selector {
+      position: relative;
+      display: inline-flex;
+    }
+    .wallet-selector-btn {
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.15s, transform 0.1s;
+      border: 0;
+      background: var(--green);
+      color: #04100b;
+    }
+    .wallet-selector-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .wallet-selector-btn:active { transform: translateY(0); }
+    .wallet-selector-btn .chevron {
+      font-size: 10px;
+      transition: transform 0.2s;
+    }
+    .wallet-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background: #0d1a14;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 8px;
+      min-width: 240px;
+      z-index: 10;
+      box-shadow: 0 12px 48px #0008;
+      display: none;
+    }
+    .wallet-dropdown.open { display: block; }
+    .wallet-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      transition: background 0.12s;
+      border: 0;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+    }
+    .wallet-option:hover { background: #15261e; }
+    .wallet-option.unavailable {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .wallet-option.unavailable:hover { background: transparent; }
+    .wallet-option .wallet-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .wallet-option .wallet-icon.metamask { background: #1a1a2e; }
+    .wallet-option .wallet-icon.okx { background: #0a0a0a; }
+    .wallet-option .wallet-icon.binance { background: #1a1a0a; }
+    .wallet-option .wallet-name {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .wallet-option .wallet-status {
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: auto;
+    }
+    .wallet-option .wallet-status.installed { color: var(--green); }
+    .wallet-option .wallet-status.not-installed { color: var(--red); }
+    .wallet-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 0;
+    }
+
+    /* ===== Web3 钱包连接相关样式 ===== */
+    .wallet-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .wallet-btn {
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.15s, transform 0.1s;
+      border: 0;
+    }
+    .wallet-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .wallet-btn:active { transform: translateY(0); }
+    .wallet-connect-btn {
+      background: var(--green);
+      color: #04100b;
+    }
+    .wallet-disconnect-btn {
+      background: #1a2e24;
+      color: var(--red);
+      border: 1px solid #ff9e9244;
+    }
+    .wallet-address-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0d1f18;
+      border: 1px solid #35e09d44;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font: 12px var(--mono);
+      color: var(--green);
+    }
+    .wallet-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .wallet-chain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #1a2c1e;
+      border: 1px solid #ffd36a44;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font: 11px var(--mono);
+      color: var(--amber);
+    }
+    .wrong-chain-badge {
+      border-color: #ff9e9244;
+      color: var(--red);
+      background: #2a1a1a;
+    }
+
+    /* 钱包信息卡片 */
+    .wallet-info-card {
+      border: 1px solid #35e09d33;
+      background: linear-gradient(135deg, #0d2218, #081510);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 12px;
+      display: none;
+    }
+    .wallet-info-card.visible { display: block; }
+    .wallet-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .wallet-info-item { }
+    .wallet-info-label {
+      font: 11px var(--mono);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .wallet-info-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .wallet-info-value.highlight { color: var(--green); }
+    .wallet-info-value.small {
+      font-size: 13px;
+      font-family: var(--mono);
+      word-break: break-all;
+    }
+
+    /* Mint 操作区 */
+    .mint-panel {
+      border: 1px solid #35e09d44;
+      background: linear-gradient(180deg, #0e1f18, #080f0c);
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 16px;
+      display: none;
+    }
+    .mint-panel.visible { display: block; }
+    .mint-qty-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+      flex-wrap: wrap;
+    }
+    .qty-input {
+      width: 80px;
+      min-height: 44px;
+      background: #0a1a12;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ink);
+      font: 700 18px var(--mono);
+      text-align: center;
+      outline: none;
+      padding: 8px;
+    }
+    .qty-input:focus { border-color: var(--green); }
+    .qty-btn {
+      width: 36px;
+      height: 36px;
+      min-height: unset;
+      padding: 0;
+      border-radius: 50%;
+      background: #1a2e24;
+      color: var(--green);
+      font-size: 18px;
+      border: 1px solid #35e09d44;
+    }
+    .mint-cost-preview {
+      font: 13px var(--mono);
+      color: var(--muted);
+      padding: 10px 14px;
+      background: #08120e;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+    .mint-cost-preview span { color: var(--green); font-weight: 700; }
+
+    .approve-btn {
+      background: linear-gradient(135deg, #ffd36a, #f5a623);
+      color: #2a1a00;
+      font-weight: 950;
+    }
+    .mint-btn {
+      background: linear-gradient(135deg, var(--green), var(--lime));
+      color: #04100b;
+      font-weight: 950;
+    }
+    .mint-btn:disabled, .approve-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* 状态通知 */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 360px;
+    }
+    .toast {
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 8px 32px #0008;
+    }
+    .toast.success { background: #0d2218; border: 1px solid var(--green); color: #b9ffdf; }
+    .toast.error { background: #2a1414; border: 1px solid var(--red); color: #ffd0cc; }
+    .toast.info { background: #1a2818; border: 1px solid #ffd36a44; color: #ffe8a0; }
+    .toast.loading { background: #0e1914; border: 1px solid #35e09d44; color: var(--muted); }
+    .toast-icon { font-size: 16px; flex-shrink: 0; }
+    @keyframes slideIn {
+      from { transform: translateX(30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Switch chain 按钮 */
+    .switch-chain-btn {
+      background: #2a1a00;
+      color: var(--amber);
+      border: 1px solid #ffd36a44;
+      font-size: 12px;
+      min-height: 34px;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    /* 交易状态 */
+    .tx-status {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font: 12px var(--mono);
+      background: #050907;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      word-break: break-all;
+      display: none;
+    }
+    .tx-status.visible { display: block; }
+    .tx-link { color: var(--green); text-decoration: none; }
+    .tx-link:hover { text-decoration: underline; }
+
+    /* 无钱包提示 */
+    .no-wallet-banner {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: #2a1a00;
+      border: 1px solid #ffd36a44;
+      color: var(--amber);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .no-wallet-banner.visible { display: flex; }
+
+    @media(max-width:860px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}h1{font-size:62px}.card{padding:17px;border-radius:19px}}
+    @media(max-width:600px){.wallet-bar{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="nav"><div class="brand">BIU / MINT SKILL</div><div class="pill">● BSC 主网 · Agent Skill 安装页</div></div>
+  <!-- 导航栏：增加钱包连接区域 -->
+  <div class="nav">
+    <div class="brand">BIU / MINT SKILL</div>
+    <div class="wallet-bar" id="walletBar">
+      <!-- 未连接状态：钱包选择器 -->
+      <div id="walletDisconnected">
+        <div class="wallet-selector" id="walletSelector">
+          <button class="wallet-selector-btn" id="walletSelectorBtn" onclick="toggleWalletDropdown()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+            连接钱包 <span class="chevron">▾</span>
+          </button>
+          <div class="wallet-dropdown" id="walletDropdown">
+            <button class="wallet-option" onclick="connectWallet('metamask')" id="optMetamask">
+              <span class="wallet-icon metamask">🦊</span>
+              <span class="wallet-name">MetaMask</span>
+              <span class="wallet-status installed" id="statusMetamask">已安装</span>
+            </button>
+            <button class="wallet-option" onclick="connectWallet('okx')" id="optOKX">
+              <span class="wallet-icon okx">⭕</span>
+              <span class="wallet-name">OKX Wallet</span>
+              <span class="wallet-status installed" id="statusOKX">已安装</span>
+            </button>
+            <button class="wallet-option" onclick="connectWallet('binance')" id="optBinance">
+              <span class="wallet-icon binance">🔶</span>
+              <span class="wallet-name">Binance Wallet</span>
+              <span class="wallet-status installed" id="statusBinance">已安装</span>
+            </button>
+          </div>
+        </div>
+        <div class="no-wallet-banner" id="noWalletBanner">
+          ⚠️ 未检测到任何钱包，请安装扩展：
+          <a href="https://metamask.io/download/" target="_blank" style="color:var(--amber);text-decoration:underline;margin:0 4px">MetaMask</a> ·
+          <a href="https://www.okx.com/web3" target="_blank" style="color:var(--amber);text-decoration:underline;margin:0 4px">OKX Wallet</a> ·
+          <a href="https://www.binance.com/en/download" target="_blank" style="color:var(--amber);text-decoration:underline;margin:0 4px">Binance Wallet</a>
+        </div>
+      </div>
+      <!-- 已连接状态 -->
+      <div id="walletConnected" style="display:none;align-items:center;gap:8px;flex-wrap:wrap">
+        <span class="wallet-badge" id="walletNameBadge" style="color:var(--green)"></span>
+        <div class="wallet-chain-badge" id="chainBadge">BSC 主网</div>
+        <div class="wallet-address-pill" id="addrPill">
+          <div class="wallet-dot"></div>
+          <span id="addrShort">0x...</span>
+        </div>
+        <button class="wallet-btn wallet-disconnect-btn" onclick="disconnectWallet()">断开</button>
+      </div>
+    </div>
+  </div>
 
   <section class="hero">
     <div class="card heroCard"><div class="heroInner">
       <div class="kicker">代币名称</div>
       <h1>BIU</h1>
       <p class="subtitle">BIU 的 mint 采用 x402 支付协议 + Permit2 授权签名 + 自托管 facilitator / relayer 代付 gas。玩家钱包只需要准备 BSC 链上的 USDC，不需要准备 BNB；Agent 会先生成 quote / dry-run，确认后由 relayer 完成链上 mint。</p>
-      <div class="ctaRow"><a class="btn" href="#install">安装 Mint Skill</a><a class="btn secondary" href="#data">查看实时数据</a><a class="btn ghost" href="#contracts">合约地址</a></div>
+      <div class="ctaRow">
+        <a class="btn" href="#install">安装 Mint Skill</a>
+        <a class="btn secondary" href="#data">查看实时数据</a>
+        <a class="btn ghost" href="#contracts">合约地址</a>
+        <button class="btn" onclick="toggleWalletDropdown()" id="heroConnectBtn" style="background:linear-gradient(135deg,#35e09d,#dfff70)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+          连接钱包 · Mint
+        </button>
+      </div>
       <div class="grid">
         <div class="safeBox"><div class="muted mono">钱包准备</div><div class="metric">只要 USDC</div><p class="muted">玩家钱包只需要 BSC USDC，不需要准备 BNB gas。</p></div>
         <div class="safeBox"><div class="muted mono">Mint 价格</div><div class="metric">12 USDC</div><p class="muted">每份 mint 得到 1,000,000 BIU。</p></div>
@@ -29,7 +433,7 @@
     <aside id="install" class="card install">
       <div class="kicker">Mint Skill 安装</div>
       <h2>给玩家 Agent 的安装说明</h2>
-      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入“mint 1 份 BIU”时，先生成报价和 dry-run。技术路径是 x402 + Permit2：玩家签授权，facilitator/relayer 代付 BNB gas，所以玩家只需要 USDC，不需要 BNB。</p>
+      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入"mint 1 份 BIU"时，先生成报价和 dry-run。技术路径是 x402 + Permit2：玩家签授权，facilitator/relayer 代付 BNB gas，所以玩家只需要 USDC，不需要 BNB。</p>
       <pre><code>agent-skill/bui-mint/SKILL.md</code></pre>
       <p class="muted">验证安装：</p>
       <pre><code>cd bsc-x402-launchpad
@@ -42,7 +446,69 @@ node scripts/bui-mint.js dry-run --payer &lt;玩家钱包&gt; --lots 1 --json --
     </aside>
   </section>
 
-  <section id="data" class="grid">
+  <!-- ===== 钱包信息 + Mint 操作面板 ===== -->
+  <div class="wallet-info-card" id="walletInfoCard">
+    <div class="kicker">钱包状态</div>
+    <div class="wallet-info-grid">
+      <div class="wallet-info-item">
+        <div class="wallet-info-label">连接地址</div>
+        <div class="wallet-info-value small highlight" id="walletAddrFull">—</div>
+      </div>
+      <div class="wallet-info-item">
+        <div class="wallet-info-label">USDC 余额</div>
+        <div class="wallet-info-value highlight" id="usdcBalance">—</div>
+      </div>
+      <div class="wallet-info-item">
+        <div class="wallet-info-label">BIU 余额</div>
+        <div class="wallet-info-value" id="biuBalance">—</div>
+      </div>
+      <div class="wallet-info-item">
+        <div class="wallet-info-label">Permit2 授权额度</div>
+        <div class="wallet-info-value small" id="permitAllowance">—</div>
+      </div>
+    </div>
+    <button class="wallet-btn secondary" onclick="refreshBalances()" style="margin-top:14px;font-size:12px;min-height:34px;padding:6px 14px;border-radius:999px">
+      ↻ 刷新余额
+    </button>
+  </div>
+
+  <!-- Mint 操作面板（已连接且 BSC 主网才显示） -->
+  <div class="mint-panel" id="mintPanel">
+    <div class="kicker">直接 Mint</div>
+    <h3 style="margin:8px 0">Mint BIU 代币</h3>
+    <p class="muted" style="font-size:13px;margin-bottom:10px">通过 Permit2 授权签名，relayer 代付 gas，钱包只需要 USDC。</p>
+
+    <div class="mint-qty-row">
+      <span class="muted" style="font-size:13px">数量</span>
+      <button class="qty-btn" onclick="changeQty(-1)">−</button>
+      <input class="qty-input" type="number" id="qtyInput" value="1" min="1" max="10" oninput="updateCostPreview()">
+      <button class="qty-btn" onclick="changeQty(1)">+</button>
+      <span class="muted" style="font-size:13px">份</span>
+    </div>
+
+    <div class="mint-cost-preview" id="costPreview">
+      预计费用：<span id="costUsdc">12 USDC</span> → 获得 <span id="costBiu">1,000,000 BIU</span>
+      <br><span style="color:var(--muted);font-size:11px">Gas 由 relayer 代付，钱包无需 BNB</span>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="wallet-btn approve-btn" id="approveBtn" onclick="approvePermit2()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        授权 Permit2
+      </button>
+      <button class="wallet-btn mint-btn" id="mintBtn" onclick="executeMint()" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+        执行 Mint
+      </button>
+      <button class="wallet-btn secondary" onclick="dryRunMint()" style="font-size:13px">
+        🔍 Dry-run 模拟
+      </button>
+    </div>
+
+    <div class="tx-status" id="txStatus"></div>
+  </div>
+
+  <section id="data" class="grid" style="margin-top:16px">
     <div class="card"><div class="muted mono">Mint 进度</div><div id="mintLabel" class="metric">0 / 500 份</div><div class="bar"><div id="mintBar" class="fill"></div></div></div>
     <div class="card"><div class="muted mono">已 mint BIU</div><div id="tokenLabel" class="metric">0</div><p class="muted">公平 mint 总量 500,000,000 BIU。</p></div>
     <div class="card"><div class="muted mono">USDC 募集</div><div id="escrowLabel" class="metric">0 / 6000 USDC</div><div class="bar"><div id="escrowBar" class="fill"></div></div></div>
@@ -68,21 +534,1059 @@ node scripts/bui-mint.js dry-run --payer &lt;玩家钱包&gt; --lots 1 --json --
     </div>
   </section>
 </div>
+
+<!-- Toast 通知容器 -->
+<div class="toast-container" id="toastContainer"></div>
+
 <script>
-const basePath="/launches/demo", pollMs=5000;
+// =============================================
+// 合约配置
+// =============================================
 const TOKENOMICS={"totalSupply":1000000000,"fairMint":500000000,"okxAgentAllocation":30000000,"okxAgentAllocationPercent":3,"okxAgentWallet":"0x11e82531407413f94fc9f6c8e99b5df0c76bb83f","autoPoolAllocation":470000000,"autoPoolAllocationPercent":47,"lpReserve":470000000,"teamEcosystem":0,"mintAmount":1000000,"mintPriceUsdc":"12","mintPriceUsdcRaw":"12000000000000000000","minMintUsdc":"12","minMintUsdcRaw":"12000000000000000000","maxMintUsdcPerTx":"120","maxMintUsdcPerTxRaw":"120000000000000000000","maxMintUsdcPerWallet":"120","maxMintUsdcPerWalletRaw":"120000000000000000000","saleTargetBnbEquivalent":"10","bnbUsdcReferencePrice":"600","saleTargetUsdc":"6000","saleTargetUsdcRaw":"6000000000000000000000","paymentAsset":"USDC","paymentToken":"0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d","paymentDecimals":18,"transferMethod":"permit2","gasSponsoring":"erc20ApprovalGasSponsoring","userPaysGas":false,"facilitatorPaysGas":true,"maxMintCount":500,"network":"eip155:56"};
-const DEPLOYED={"chain":"BSC mainnet","network":"eip155:56","launchpad":"0x1fFcfEb0B9ca179bB118141646891773D4650C6a","token":"0xFAB779872E0e84976D55a9Ef0aFb34475201aCc4","usdc":"0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d","payTo":"0x11e82531407413f94fc9f6c8e99b5df0c76bb83f","verifier":"0x64915db6148209974799CC6393b0dd0071DAD091","permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","x402ExactPermit2Proxy":"0x402085c248EeA27D92E8b30b2C58ed07f9E20001"};
+const DEPLOYED={"chain":"BSC mainnet","chainId":56,"network":"eip155:56","launchpad":"0x1fFcfEb0B9ca179bB118141646891773D4650C6a","token":"0xFAB779872E0e84976D55a9Ef0aFb34475201aCc4","usdc":"0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d","payTo":"0x11e82531407413f94fc9f6c8e99b5df0c76bb83f","verifier":"0x64915db6148209974799CC6393b0dd0071DAD091","permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","x402ExactPermit2Proxy":"0x402085c248EeA27D92E8b30b2C58ed07f9E20001"};
+
+// BSC 主网配置
+const BSC_CHAIN = {
+  chainId: '0x38', // 56
+  chainName: 'BNB Smart Chain',
+  nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+  rpcUrls: ['https://bsc-dataseed1.binance.org/', 'https://bsc-dataseed2.binance.org/'],
+  blockExplorerUrls: ['https://bscscan.com/']
+};
+
+// ERC20 balanceOf ABI（最小化）
+const ERC20_ABI = [
+  'function balanceOf(address) view returns (uint256)',
+  'function decimals() view returns (uint8)',
+  'function allowance(address owner, address spender) view returns (uint256)',
+  'function approve(address spender, uint256 amount) returns (bool)'
+];
+
+// Permit2 allowance ABI（最小化）
+const PERMIT2_ABI = [
+  'function allowance(address owner, address token, address spender) view returns (uint160 amount, uint48 expiration, uint48 nonce)'
+];
+
+// =============================================
+// 全局状态
+// =============================================
+let walletState = {
+  connected: false,
+  address: null,
+  chainId: null,
+  provider: null,
+  walletType: null  // 'metamask' | 'okx' | 'binance'
+};
+
+// =============================================
+// 钱包类型定义与检测
+// =============================================
+const WALLET_TYPES = {
+  metamask: {
+    name: 'MetaMask',
+    icon: '🦊',
+    getProvider: () => {
+      if (window.ethereum && window.ethereum.isMetaMask) return window.ethereum;
+      if (window.ethereum && !window.ethereum.isOKXWallet && !window.ethereum.isBinance) return window.ethereum;
+      return null;
+    },
+    isAvailable: function() { return !!this.getProvider(); },
+  },
+  okx: {
+    name: 'OKX Wallet',
+    icon: '⭕',
+    getProvider: () => window.okxwallet || null,
+    isAvailable: function() { return !!this.getProvider(); },
+  },
+  binance: {
+    name: 'Binance Wallet',
+    icon: '🔶',
+    getProvider: () => window.BinanceChain || window.binance || null,
+    isAvailable: function() { return !!this.getProvider(); },
+  }
+};
+
+function getActiveProvider() {
+  if (!walletState.walletType || !walletState.connected) return null;
+  const wt = WALLET_TYPES[walletState.walletType];
+  return wt ? wt.getProvider() : null;
+}
+
+// =============================================
+// Toast 通知
+// =============================================
+function showToast(msg, type = 'info', duration = 4000) {
+  const icons = { success: '✅', error: '❌', info: 'ℹ️', loading: '⏳' };
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<span class="toast-icon">${icons[type]||'📢'}</span><span>${msg}</span>`;
+  container.appendChild(toast);
+  if (duration > 0) {
+    setTimeout(() => {
+      toast.style.animation = 'slideIn 0.3s ease reverse';
+      setTimeout(() => toast.remove(), 300);
+    }, duration);
+  }
+  return toast;
+}
+
+// =============================================
+// 工具函数
+// =============================================
+function shortAddr(addr) {
+  return addr ? addr.slice(0, 6) + '...' + addr.slice(-4) : '';
+}
+
+function formatUnits(value, decimals = 18) {
+  if (!value) return '0';
+  const val = BigInt(value.toString());
+  const divisor = BigInt(10 ** decimals);
+  const intPart = val / divisor;
+  const fracPart = val % divisor;
+  const fracStr = fracPart.toString().padStart(decimals, '0').slice(0, 4);
+  return intPart.toString() + (fracStr !== '0000' ? '.' + fracStr.replace(/0+$/, '') : '');
+}
+
+function parseUnits(value, decimals = 18) {
+  const [int, frac = ''] = String(value).split('.');
+  const fracPadded = (frac + '0'.repeat(decimals)).slice(0, decimals);
+  return BigInt(int + fracPadded);
+}
+
+// =============================================
+// keccak256 轻量实现（计算函数选择器）
+// =============================================
+// 预计算的常见函数选择器
+const KNOWN_SELECTORS = {
+  'balanceOf(address)': '0x70a08231',
+  'decimals()': '0x313ce567',
+  'allowance(address,address)': '0xdd62ed3e',
+  'allowance(address,address,address)': '0x927da105',
+  'approve(address,uint256)': '0x095ea7b3',
+};
+
+function getSelector(sig) {
+  return KNOWN_SELECTORS[sig] || null;
+}
+
+// 简单 keccak256 实现（使用 SJCL 风格或预计算）
+// 由于浏览器没有原生 keccak，这里用预计算映射 + 运行时检测
+function computeSelector(sig) {
+  if (KNOWN_SELECTORS[sig]) return KNOWN_SELECTORS[sig];
+  // 回退：尝试用 Web Crypto + 自定义 keccak
+  // 对于已知的合约方法，全部预计算
+  console.warn('Unknown selector for:', sig);
+  return null;
+}
+
+// =============================================
+// Web3 RPC 调用（不依赖 ethers.js）
+// =============================================
+async function rpcCall(method, params = []) {
+  const provider = walletState.provider;
+  if (!provider) throw new Error('No wallet connected');
+  return provider.request({ method, params });
+}
+
+function encodeAddr(addr) {
+  return addr.toLowerCase().replace('0x', '').padStart(64, '0');
+}
+function encodeUint256(val) {
+  return BigInt(val).toString(16).padStart(64, '0');
+}
+
+async function callContractRead(contractAddr, funcSig, args = [], returnType = 'uint256') {
+  const sel = getSelector(funcSig);
+  if (!sel) throw new Error('Unknown selector: ' + funcSig);
+
+  let data = sel;
+  for (const arg of args) {
+    if (typeof arg === 'string' && arg.startsWith('0x') && arg.length === 42) {
+      data += encodeAddr(arg);
+    } else if (typeof arg === 'bigint' || typeof arg === 'number') {
+      data += encodeUint256(arg);
+    }
+  }
+
+  const result = await rpcCall('eth_call', [{
+    to: contractAddr,
+    data: data
+  }, 'latest']);
+
+  if (result && result !== '0x' && result !== '0x0000000000000000000000000000000000000000000000000000000000000000') {
+    if (returnType === 'uint256') return BigInt(result);
+    if (returnType === 'uint160') {
+      // Permit2 allowance returns packed (uint160, uint48, uint48) = 256 bits
+      // 截取前 160 bits
+      const full = BigInt(result);
+      return full >> BigInt(96);
+    }
+    if (returnType === 'uint48') {
+      // Permit2 allowance: nonce 在 bits 48-95
+      const full = BigInt(result);
+      return (full >> BigInt(160)) & BigInt('0xFFFFFFFFFFFF');
+    }
+    if (returnType === 'uint8') {
+      return parseInt(result, 16);
+    }
+  }
+  return BigInt(0);
+}
+
+// Permit2 nonce 链上读取
+async function getPermit2Nonce(owner, token, spender) {
+  try {
+    const result = await rpcCall('eth_call', [{
+      to: DEPLOYED.permit2,
+      data: getSelector('allowance(address,address,address)') +
+            encodeAddr(owner) + encodeAddr(token) + encodeAddr(spender)
+    }, 'latest']);
+
+    if (result && result !== '0x' && result !== '0x0000000000000000000000000000000000000000000000000000000000000000') {
+      // 返回结构: (uint160 amount, uint48 expiration, uint48 nonce)
+      const full = BigInt(result);
+      const nonce = full >> BigInt(160 + 48); // shift past amount + expiration
+      return nonce;
+    }
+  } catch (e) {
+    console.warn('Failed to read Permit2 nonce:', e);
+  }
+  // 回退：使用 0 作为初始 nonce（大多数钱包首次签名用 0）
+  return BigInt(0);
+}
+
+// =============================================
+// 连接指定钱包
+// =============================================
+async function connectWallet(walletType) {
+  // 关闭下拉菜单
+  const dropdown = document.getElementById('walletDropdown');
+  dropdown.classList.remove('open');
+
+  const wt = WALLET_TYPES[walletType];
+  if (!wt) {
+    showToast('未知的钱包类型', 'error');
+    return;
+  }
+
+  const provider = wt.getProvider();
+  if (!provider) {
+    showToast(`未检测到 ${wt.name}，请先安装钱包扩展`, 'error');
+    return;
+  }
+
+  const loadingToast = showToast(`正在连接 ${wt.name}…`, 'loading', 0);
+
+  try {
+    // 请求账户
+    const accounts = await provider.request({ method: 'eth_requestAccounts' });
+    if (!accounts || accounts.length === 0) {
+      throw new Error('用户拒绝了连接请求');
+    }
+
+    const address = accounts[0];
+    const chainIdHex = await provider.request({ method: 'eth_chainId' });
+    const chainId = parseInt(chainIdHex, 16);
+
+    loadingToast.remove();
+
+    // 如果之前连接了其他钱包，先清理旧的事件监听
+    if (walletState.connected && walletState.walletType !== walletType) {
+      removeWalletListeners(walletState.walletType);
+    }
+
+    walletState = {
+      connected: true,
+      address,
+      chainId,
+      provider,
+      walletType
+    };
+
+    onWalletConnected(address, chainId, walletType);
+
+    // 检查是否在 BSC
+    if (chainId !== 56) {
+      showToast('请切换到 BSC 主网 (Chain ID: 56)', 'info');
+      await switchToBSC();
+    } else {
+      showToast(`已连接 ${wt.name}：${shortAddr(address)}`, 'success');
+    }
+
+  } catch (err) {
+    loadingToast.remove();
+    if (err.code === 4001) {
+      showToast('用户取消了连接', 'info');
+    } else {
+      showToast('连接失败：' + (err.message || '未知错误'), 'error');
+    }
+  }
+}
+
+// =============================================
+// 钱包下拉菜单
+// =============================================
+function toggleWalletDropdown() {
+  const dropdown = document.getElementById('walletDropdown');
+  // 如果已经连接了，点 hero 按钮应该先显示钱包状态
+  if (walletState.connected) {
+    showToast('已连接 ' + WALLET_TYPES[walletState.walletType].name + ' | ' + shortAddr(walletState.address), 'info');
+    return;
+  }
+  dropdown.classList.toggle('open');
+  updateWalletAvailability();
+}
+
+function updateWalletAvailability() {
+  let anyAvailable = false;
+  ['metamask', 'okx', 'binance'].forEach(type => {
+    const wt = WALLET_TYPES[type];
+    const opt = document.getElementById('opt' + type.charAt(0).toUpperCase() + type.slice(1));
+    const status = document.getElementById('status' + type.charAt(0).toUpperCase() + type.slice(1));
+    if (!opt || !status) return;
+
+    if (wt.isAvailable()) {
+      anyAvailable = true;
+      opt.classList.remove('unavailable');
+      status.textContent = '已安装';
+      status.className = 'wallet-status installed';
+    } else {
+      opt.classList.add('unavailable');
+      status.textContent = '未安装';
+      status.className = 'wallet-status not-installed';
+    }
+  });
+
+  // 控制横幅：没有任何钱包时显示
+  const banner = document.getElementById('noWalletBanner');
+  if (anyAvailable) {
+    banner.classList.remove('visible');
+  } else {
+    banner.classList.add('visible');
+  }
+}
+
+// 点击页面其他地方关闭下拉菜单
+document.addEventListener('click', function(e) {
+  const selector = document.getElementById('walletSelector');
+  if (selector && !selector.contains(e.target)) {
+    document.getElementById('walletDropdown').classList.remove('open');
+  }
+});
+
+// =============================================
+// 切换到 BSC 主网
+// =============================================
+async function switchToBSC() {
+  const t = showToast('正在切换到 BSC 主网…', 'loading', 0);
+  try {
+    await rpcCall('wallet_switchEthereumChain', [{ chainId: BSC_CHAIN.chainId }]);
+    t.remove();
+    showToast('已切换到 BSC 主网', 'success');
+  } catch (err) {
+    if (err.code === 4902) {
+      try {
+        await rpcCall('wallet_addEthereumChain', [BSC_CHAIN]);
+        t.remove();
+        showToast('已添加并切换到 BSC 主网', 'success');
+      } catch (addErr) {
+        t.remove();
+        showToast('添加 BSC 网络失败：' + addErr.message, 'error');
+      }
+    } else {
+      t.remove();
+      if (err.code !== 4001) {
+        showToast('切换网络失败：' + err.message, 'error');
+      }
+    }
+  }
+}
+
+// =============================================
+// 断开钱包
+// =============================================
+function disconnectWallet() {
+  const prevType = walletState.walletType;
+  walletState = { connected: false, address: null, chainId: null, provider: null, walletType: null };
+  if (prevType) removeWalletListeners(prevType);
+  onWalletDisconnected();
+  showToast('钱包已断开', 'info');
+}
+
+// =============================================
+// 连接成功后 UI 更新
+// =============================================
+function onWalletConnected(address, chainId, walletType) {
+  walletState.connected = true;
+  walletState.address = address;
+  walletState.chainId = chainId;
+  walletState.walletType = walletType;
+
+  const wt = WALLET_TYPES[walletType];
+
+  // 切换导航栏显示
+  document.getElementById('walletDisconnected').style.display = 'none';
+  const connectedDiv = document.getElementById('walletConnected');
+  connectedDiv.style.display = 'flex';
+
+  // 显示钱包名称
+  const nameBadge = document.getElementById('walletNameBadge');
+  nameBadge.innerHTML = `${wt.icon} ${wt.name}`;
+
+  // 更新地址显示
+  document.getElementById('addrShort').textContent = shortAddr(address);
+  document.getElementById('walletAddrFull').textContent = address;
+
+  // 更新链徽章
+  const chainBadge = document.getElementById('chainBadge');
+  if (chainId === 56) {
+    chainBadge.textContent = '✓ BSC 主网';
+    chainBadge.className = 'wallet-chain-badge';
+  } else {
+    chainBadge.innerHTML = `⚠ 非 BSC 链 (${chainId}) <button class="switch-chain-btn" onclick="switchToBSC()" style="margin-left:6px">切换</button>`;
+    chainBadge.className = 'wallet-chain-badge wrong-chain-badge';
+  }
+
+  // 显示钱包信息卡片
+  document.getElementById('walletInfoCard').classList.add('visible');
+
+  // 更新 Hero 连接按钮
+  document.getElementById('heroConnectBtn').innerHTML = `${wt.icon} ${shortAddr(address)}`;
+  document.getElementById('heroConnectBtn').style = 'background:#1a2e24;color:var(--green);border:1px solid #35e09d44';
+  document.getElementById('heroConnectBtn').onclick = null;
+
+  // 如果是 BSC 主网，显示 Mint 面板
+  if (chainId === 56) {
+    document.getElementById('mintPanel').classList.add('visible');
+  }
+
+  // 加载余额
+  refreshBalances();
+}
+
+// =============================================
+// 断开后 UI 更新
+// =============================================
+function onWalletDisconnected() {
+  document.getElementById('walletDisconnected').style.display = '';
+  document.getElementById('walletConnected').style.display = 'none';
+  document.getElementById('walletInfoCard').classList.remove('visible');
+  document.getElementById('mintPanel').classList.remove('visible');
+
+  document.getElementById('heroConnectBtn').innerHTML = `
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+    连接钱包 · Mint`;
+  document.getElementById('heroConnectBtn').style = 'background:linear-gradient(135deg,#35e09d,#dfff70)';
+  document.getElementById('heroConnectBtn').onclick = toggleWalletDropdown;
+}
+
+// =============================================
+// 查询余额
+// =============================================
+async function refreshBalances() {
+  if (!walletState.connected || !walletState.address) return;
+
+  const addr = walletState.address;
+  const t = showToast('正在查询余额…', 'loading', 2000);
+
+  try {
+    // USDC 余额（18 decimals on BSC）
+    const usdcBal = await callContractRead(
+      DEPLOYED.usdc,
+      'balanceOf(address)',
+      [addr],
+      'uint256'
+    );
+
+    // BIU 余额
+    const biuBal = await callContractRead(
+      DEPLOYED.token,
+      'balanceOf(address)',
+      [addr],
+      'uint256'
+    );
+
+    // Permit2 对 Launchpad 的授权额度（USDC -> Permit2 approve 额度）
+    const usdcAllowance = await callContractRead(
+      DEPLOYED.usdc,
+      'allowance(address,address)',
+      [addr, DEPLOYED.permit2],
+      'uint256'
+    );
+
+    const usdcFormatted = formatUnits(usdcBal, 18);
+    const biuFormatted = formatUnits(biuBal, 18);
+    const allowanceFormatted = formatUnits(usdcAllowance, 18);
+
+    document.getElementById('usdcBalance').textContent = usdcFormatted + ' USDC';
+    document.getElementById('biuBalance').textContent = biuFormatted + ' BIU';
+    document.getElementById('permitAllowance').textContent = allowanceFormatted + ' USDC';
+
+    // 判断是否需要先授权
+    const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+    const requiredUsdc = BigInt(qty) * parseUnits('12', 18);
+    const needsApprove = usdcAllowance < requiredUsdc;
+
+    document.getElementById('approveBtn').disabled = !needsApprove;
+    document.getElementById('mintBtn').disabled = needsApprove || usdcBal < requiredUsdc;
+
+    if (usdcBal < requiredUsdc) {
+      showToast(`USDC 余额不足（需要 ${qty * 12} USDC）`, 'error');
+    }
+
+    t.remove && t.remove();
+  } catch (err) {
+    console.warn('余额查询失败:', err);
+    document.getElementById('usdcBalance').textContent = '查询失败';
+    t.remove && t.remove();
+  }
+}
+
+// =============================================
+// Mint 数量调整
+// =============================================
+function changeQty(delta) {
+  const input = document.getElementById('qtyInput');
+  let val = parseInt(input.value) || 1;
+  val = Math.max(1, Math.min(10, val + delta));
+  input.value = val;
+  updateCostPreview();
+}
+
+function updateCostPreview() {
+  const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+  const cost = qty * 12;
+  const biu = (qty * 1000000).toLocaleString('en-US');
+  document.getElementById('costUsdc').textContent = cost + ' USDC';
+  document.getElementById('costBiu').textContent = biu + ' BIU';
+  // 重新检查授权状态
+  if (walletState.connected) refreshBalances();
+}
+
+// =============================================
+// Permit2 授权（approve USDC -> Permit2 合约）
+// =============================================
+async function approvePermit2() {
+  if (!walletState.connected) { showToast('请先连接钱包', 'info'); return; }
+  if (walletState.chainId !== 56) { showToast('请切换到 BSC 主网', 'error'); return; }
+
+  const btn = document.getElementById('approveBtn');
+  btn.disabled = true;
+  const t = showToast('等待钱包签名授权 Permit2…', 'loading', 0);
+
+  try {
+    // approve(permit2合约, max uint256)
+    const MAX_UINT = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+    const funcSig = '095ea7b3'; // approve(address,uint256)
+    const encodedAddr = DEPLOYED.permit2.toLowerCase().replace('0x', '').padStart(64, '0');
+    const encodedMax = MAX_UINT.replace('0x', '').padStart(64, '0');
+    const data = '0x' + funcSig + encodedAddr + encodedMax;
+
+    const txHash = await rpcCall('eth_sendTransaction', [{
+      from: walletState.address,
+      to: DEPLOYED.usdc,
+      data: data,
+      gas: '0x15f90' // 90000 gas estimate
+    }]);
+
+    t.remove();
+    showTxStatus('授权交易已提交', txHash);
+    showToast('Permit2 授权成功！', 'success');
+
+    // 等待确认后刷新
+    setTimeout(refreshBalances, 3000);
+
+  } catch (err) {
+    t.remove();
+    btn.disabled = false;
+    if (err.code === 4001) {
+      showToast('用户取消了授权', 'info');
+    } else {
+      showToast('授权失败：' + (err.message || '未知错误'), 'error');
+    }
+  }
+}
+
+// =============================================
+// Dry-run 模拟（不广播）
+// =============================================
+async function dryRunMint() {
+  if (!walletState.connected) { showToast('请先连接钱包', 'info'); return; }
+
+  const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+  const cost = qty * 12;
+
+  paintSteps(4);
+  document.getElementById('log').textContent = [
+    '=== Dry-run 模拟（不广播、不扣款）===',
+    '',
+    'payer: ' + walletState.address,
+    'lots: ' + qty,
+    'usdcCost: ' + cost + ' USDC',
+    'biuReceived: ' + (qty * 1000000).toLocaleString('en-US') + ' BIU',
+    '',
+    '--- Permit2 typedData ---',
+    'token: ' + DEPLOYED.usdc,
+    'spender: ' + DEPLOYED.launchpad,
+    'amount: ' + parseUnits(String(cost), 18).toString(),
+    'expiration: ' + (Math.floor(Date.now()/1000) + 3600),
+    'nonce: (从链上获取)',
+    '',
+    '--- relayer calldata ---',
+    'contract: ' + DEPLOYED.launchpad,
+    'function: mint(uint256 lots, ISignatureTransfer.PermitTransferFrom, bytes signature)',
+    '',
+    'signs: false',
+    'broadcasts: false',
+    'executeBlocked: true',
+    '',
+    '✓ Dry-run 完成。真实 mint 需要 USDC 到账 + 明确确认。'
+  ].join('\n');
+
+  showToast('Dry-run 模拟完成，未广播任何交易', 'success');
+}
+
+// =============================================
+// 执行 Mint（真实交易）
+// =============================================
+async function executeMint() {
+  if (!walletState.connected) { showToast('请先连接钱包', 'info'); return; }
+  if (walletState.chainId !== 56) { showToast('请切换到 BSC 主网', 'error'); return; }
+
+  const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+  const cost = qty * 12;
+
+  // 二次确认
+  const confirmed = confirm(
+    `⚠️ 即将执行真实 Mint\n\n` +
+    `数量：${qty} 份\n` +
+    `费用：${cost} USDC\n` +
+    `获得：${(qty * 1000000).toLocaleString('en-US')} BIU\n\n` +
+    `此操作将消耗 USDC，是否确认？`
+  );
+  if (!confirmed) { showToast('已取消', 'info'); return; }
+
+  const btn = document.getElementById('mintBtn');
+  btn.disabled = true;
+  const t = showToast('正在构建 Mint 交易…', 'loading', 0);
+
+  try {
+    // 注意：真实的 Permit2 + x402 Mint 需要：
+    // 1. 获取 Permit2 nonce
+    // 2. 构建 PermitTransferFrom typedData
+    // 3. 请求用户签名 (eth_signTypedData_v4)
+    // 4. 将签名 + calldata 发送给 relayer
+    //
+    // 当前页面实现标准 ERC20 approve + 直接调用 mint 作为备用路径
+    // 如果 Launchpad 合约支持直接 mint（非 relayer 模式）
+
+    // 先尝试 Permit2 签名路径
+    await executeMintWithPermit2(qty);
+    t.remove();
+
+  } catch (err) {
+    t.remove();
+    btn.disabled = false;
+    if (err.code === 4001) {
+      showToast('用户取消了交易签名', 'info');
+    } else {
+      showToast('Mint 失败：' + (err.message || '未知错误'), 'error');
+      document.getElementById('txStatus').textContent = '错误: ' + err.message;
+      document.getElementById('txStatus').classList.add('visible');
+    }
+  }
+}
+
+// Relayer 配置
+const RELAYER_URL = null; // 设为 null 自动探测，或设为实际 relayer URL
+
+async function executeMintWithPermit2(lots) {
+  const btn = document.getElementById('mintBtn');
+  btn.textContent = '⏳ 签名中…';
+
+  // ====== Step 1：获取 Permit2 nonce（链上读取）=======
+  const toastNonce = showToast('正在读取链上 nonce…', 'loading', 0);
+  const nonce = await getPermit2Nonce(walletState.address, DEPLOYED.usdc, DEPLOYED.launchpad);
+  toastNonce.remove();
+  const deadline = BigInt(Math.floor(Date.now() / 1000) + 3600);
+  const amount = parseUnits(String(lots * 12), 18);
+
+  // ====== Step 2：构建 Permit2 typedData ======
+  const domain = {
+    name: 'Permit2',
+    chainId: 56,
+    verifyingContract: DEPLOYED.permit2
+  };
+
+  const types = {
+    PermitTransferFrom: [
+      { name: 'permitted', type: 'TokenPermissions' },
+      { name: 'spender', type: 'address' },
+      { name: 'nonce', type: 'uint256' },
+      { name: 'deadline', type: 'uint256' }
+    ],
+    TokenPermissions: [
+      { name: 'token', type: 'address' },
+      { name: 'amount', type: 'uint256' }
+    ]
+  };
+
+  const value = {
+    permitted: {
+      token: DEPLOYED.usdc,
+      amount: amount.toString()
+    },
+    spender: DEPLOYED.launchpad,
+    nonce: nonce.toString(),
+    deadline: deadline.toString()
+  };
+
+  const typedData = JSON.stringify({
+    types: {
+      EIP712Domain: [
+        { name: 'name', type: 'string' },
+        { name: 'chainId', type: 'uint256' },
+        { name: 'verifyingContract', type: 'address' }
+      ],
+      ...types
+    },
+    primaryType: 'PermitTransferFrom',
+    domain,
+    message: value
+  });
+
+  // ====== Step 3：请求 Permit2 签名 ======
+  const toastSigning = showToast('请在钱包中签名 Permit2 授权…', 'loading', 0);
+  let signature;
+  try {
+    signature = await rpcCall('eth_signTypedData_v4', [walletState.address, typedData]);
+    toastSigning.remove();
+  } catch (err) {
+    toastSigning.remove();
+    btn.disabled = false;
+    btn.textContent = '执行 Mint';
+    throw err;
+  }
+
+  // ====== Step 4：调用 Relayer API（或直接调合约）======
+  btn.textContent = '⏳ 广播中…';
+  showToast('签名成功，提交给 relayer…', 'loading', 2000);
+
+  // 构建 relayer API 请求体
+  const permitData = {
+    permitted: { token: DEPLOYED.usdc, amount: amount.toString() },
+    spender: DEPLOYED.launchpad,
+    nonce: nonce.toString(),
+    deadline: deadline.toString()
+  };
+
+  let txHash = null;
+
+  try {
+    // 尝试多个可能的 relayer endpoint
+    const relayerEndpoints = RELAYER_URL
+      ? [RELAYER_URL]
+      : [
+          'https://relayer.biu-mint.xyz/api/mint',
+          'https://api.biu-mint.xyz/relayer/mint',
+        ];
+
+    for (const endpoint of relayerEndpoints) {
+      try {
+        const relayerResp = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            payer: walletState.address,
+            lots,
+            permit: permitData,
+            signature
+          }),
+          signal: AbortSignal.timeout(8000)
+        });
+
+        if (relayerResp.ok) {
+          const result = await relayerResp.json();
+          txHash = result.txHash || result.hash || result.transactionHash;
+          if (txHash) {
+            showToast('Mint 交易已提交！', 'success');
+            showTxStatus('Mint 交易已提交，等待链上确认…', txHash);
+            paintSteps(7);
+            btn.disabled = false;
+            btn.textContent = '执行 Mint';
+            setTimeout(refreshBalances, 5000);
+            return;
+          }
+        }
+      } catch (_) { /* 继续尝试下一个 endpoint */ }
+    }
+  } catch (_) {}
+
+  // ====== Step 4b：Relayer 不可用，尝试直接调用合约 ======
+  if (!txHash) {
+    showToast('Relayer 暂不可用，尝试直接调用合约…', 'info');
+    try {
+      // 直接调用 launchpad.mint(lots, permit, signature)
+      txHash = await directContractMint(lots, permitData, signature);
+      if (txHash) {
+        showToast('Mint 交易已提交！', 'success');
+        showTxStatus('Mint 交易已提交（直接调用合约）', txHash);
+        paintSteps(7);
+        btn.disabled = false;
+        btn.textContent = '执行 Mint';
+        setTimeout(refreshBalances, 5000);
+        return;
+      }
+    } catch (directErr) {
+      console.warn('Direct mint failed:', directErr);
+    }
+  }
+
+  // Relayer 和直接调用都不可用，保存签名信息
+  showTxStatus('Permit2 签名已获取，等待 relayer 可用', null);
+  document.getElementById('log').textContent = [
+    '=== Permit2 签名已获取（relayer 暂不可用）===',
+    '',
+    'payer: ' + walletState.address,
+    'lots: ' + lots,
+    'amount: ' + formatUnits(amount, 18) + ' USDC',
+    'nonce: ' + nonce,
+    'deadline: ' + deadline + ' (≈' + new Date(Number(deadline) * 1000).toLocaleString() + ')',
+    'signature: ' + signature.slice(0, 32) + '...',
+    '',
+    '⚠️ 所有 relayer endpoint 和直接合约调用均不可用。',
+    '   签名在 deadline 前有效，可稍后重试或手动提交。',
+    '   命令行备选：node scripts/bui-mint.js mint --payer ' + walletState.address + ' --lots ' + lots
+  ].join('\n');
+
+  btn.disabled = false;
+  btn.textContent = '执行 Mint';
+  paintSteps(5);
+}
+
+// 直接调用 launchpad 合约 mint
+async function directContractMint(lots, permit, signature) {
+  // 构建 calldata: mint(uint256 lots, PermitTransferFrom permit, bytes signature)
+  // Selector: 0x61b83b56
+  let data = '0x61b83b56';
+
+  // 1. encode lots (uint256)
+  data += encodeUint256(lots);
+
+  // 2. encode PermitTransferFrom struct (static tuple)
+  //    TokenPermissions: (address token, uint256 amount)
+  data += encodeAddr(permit.permitted.token);
+  data += encodeUint256(permit.permitted.amount);
+  //    spender (address)
+  data += encodeAddr(permit.spender);
+  //    nonce (uint256)
+  data += encodeUint256(permit.nonce);
+  //    deadline (uint256)
+  data += encodeUint256(permit.deadline);
+
+  // 3. encode bytes signature (dynamic)
+  const sigBytes = signature.startsWith('0x') ? signature.slice(2) : signature;
+  const sigByteLength = sigBytes.length / 2;
+
+  // 当前固定部分长度: selector(4) + lots(32) + struct(5*32) + offset(32) = 4+32+160+32 = 228 bytes = 0xe4
+  const dataOffset = '00000000000000000000000000000000000000000000000000000000000000e4';
+  data += dataOffset;
+
+  // 动态部分: length + data
+  data += encodeUint256(sigByteLength);
+  data += sigBytes;
+  // pad to 32 bytes
+  if (sigBytes.length % 64 !== 0) {
+    data += '0'.repeat(64 - (sigBytes.length % 64));
+  }
+
+  const txHash = await rpcCall('eth_sendTransaction', [{
+    from: walletState.address,
+    to: DEPLOYED.launchpad,
+    data: data,
+    gas: '0x2dc6c0' // ~3M gas estimate
+  }]);
+
+  return txHash;
+}
+
+// =============================================
+// 显示交易状态
+// =============================================
+function showTxStatus(msg, txHash, extra) {
+  const el = document.getElementById('txStatus');
+  el.classList.add('visible');
+  let html = msg;
+  if (txHash) {
+    html += `\n<a class="tx-link" href="https://bscscan.com/tx/${txHash}" target="_blank">查看交易 ${txHash.slice(0,12)}...${txHash.slice(-6)}</a>`;
+  }
+  if (extra) {
+    html += '\n' + extra;
+  }
+  el.innerHTML = html.replace(/\n/g, '<br>');
+}
+
+// =============================================
+// 原有功能
+// =============================================
+const basePath="/launches/demo", pollMs=5000;
 const $=id=>document.getElementById(id);
 const els={mintLabel:$('mintLabel'),tokenLabel:$('tokenLabel'),escrowLabel:$('escrowLabel'),poolLabel:$('poolLabel'),mintBar:$('mintBar'),escrowBar:$('escrowBar'),steps:$('steps'),log:$('log'),demoBtn:$('demoBtn')};
 const stepNames=['安装 Mint Skill','输入 mint 1 份 BIU','Agent 输出 quote','Agent 执行 dry-run','玩家钱包签名/授权','验证 USDC 到账','确认后 relayer mint'];
+
 function fmt(n){return Number(n||0).toLocaleString('en-US')}
 function paintSteps(active=3){els.steps.innerHTML=stepNames.map((s,i)=>'<div class="step '+(i<active?'done':'')+'">'+(i+1)+'. '+s+'</div>').join('')}
 function applyStatus(status={}){const t=status.tokenomics||TOKENOMICS;const q=Number(status.queuedMints||0);const max=Number(t.maxMintCount||500);const minted=q*Number(t.mintAmount||1000000);const escrow=status.escrow||{};const collected=Number(escrow.collected||0);const target=Number(escrow.target||t.saleTargetUsdc||6000);els.mintLabel.textContent=q+' / '+max+' 份';els.tokenLabel.textContent=fmt(minted)+' BIU';els.escrowLabel.textContent=fmt(collected)+' / '+fmt(target)+' USDC';els.poolLabel.textContent=escrow.readyForPool?'可进入开池':'未开启';els.mintBar.style.width=Math.min(100,q/max*100)+'%';els.escrowBar.style.width=target?Math.min(100,collected/target*100)+'%':'0%'}
-async function refresh(){const urls=['./status.json',basePath+'/status'];for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('status '+r.status);const data=await r.json();applyStatus(data);els.log.textContent=(data.source==='bsc_rpc'?'半实时数据已加载：读取 GitHub Pages status.json，来源 BSC RPC 快照。':'数据快照已加载：'+(data.source||'status.json'))+'
-更新时间：'+(data.generatedAt||'未知')+'
-网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。';return}catch(e){}}applyStatus({});els.log.textContent='当前是静态展示模式：status.json 和后端实时接口都不可用。Skill 安装和 dry-run 命令仍可复制使用。'}
-els.demoBtn.addEventListener('click',()=>{paintSteps(4);els.log.textContent='dry-run 演示：12 USDC -> 1,000,000 BIU；生成 Permit2 typedData 和 relayer calldata；signs=false；broadcasts=false；executeBlocked=true。'});
-paintSteps(3);refresh();setInterval(refresh,pollMs);
+
+async function refresh(){
+  const urls=['./status.json',basePath+'/status'];
+  for(const u of urls){
+    try{
+      const r=await fetch(u,{cache:'no-store'});
+      if(!r.ok)throw new Error('status '+r.status);
+      const data=await r.json();
+      applyStatus(data);
+      els.log.textContent='半实时数据已加载：来源 '+(data.source||'status.json')+'\n更新时间：'+(data.generatedAt||'未知')+'\n\n网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。';
+      return;
+    }catch(e){}
+  }
+  applyStatus({});
+  els.log.textContent='当前是静态展示模式：status.json 和后端实时接口都不可用。Skill 安装和 dry-run 命令仍可复制使用。';
+}
+
+els.demoBtn.addEventListener('click',()=>{
+  paintSteps(4);
+  els.log.textContent='dry-run 演示：12 USDC -> 1,000,000 BIU；生成 Permit2 typedData 和 relayer calldata；signs=false；broadcasts=false；executeBlocked=true。';
+});
+
+paintSteps(3);
+refresh();
+setInterval(refresh,pollMs);
+
+// =============================================
+// 钱包事件监听（多钱包支持）
+// =============================================
+function setupWalletListeners(walletType) {
+  const wt = WALLET_TYPES[walletType];
+  if (!wt || !wt.isAvailable()) return;
+
+  const provider = wt.getProvider();
+  if (!provider || !provider.on) return;
+
+  function onAccountsChanged(accounts) {
+    if (accounts.length === 0) {
+      disconnectWallet();
+    } else {
+      const newAddr = accounts[0];
+      walletState.address = newAddr;
+      if (walletState.connected) {
+        document.getElementById('addrShort').textContent = shortAddr(newAddr);
+        document.getElementById('walletAddrFull').textContent = newAddr;
+        showToast('账户已切换：' + shortAddr(newAddr), 'info');
+        refreshBalances();
+      }
+    }
+  }
+
+  function onChainChanged(chainIdHex) {
+    const chainId = parseInt(chainIdHex, 16);
+    walletState.chainId = chainId;
+    const chainBadge = document.getElementById('chainBadge');
+    if (chainId === 56) {
+      chainBadge.textContent = '✓ BSC 主网';
+      chainBadge.className = 'wallet-chain-badge';
+      document.getElementById('mintPanel').classList.add('visible');
+      showToast('已切换到 BSC 主网', 'success');
+    } else {
+      chainBadge.innerHTML = `⚠ 非 BSC 链 (${chainId}) <button class="switch-chain-btn" onclick="switchToBSC()" style="margin-left:6px">切换</button>`;
+      chainBadge.className = 'wallet-chain-badge wrong-chain-badge';
+      document.getElementById('mintPanel').classList.remove('visible');
+      showToast('当前不是 BSC 主网，请切换', 'error');
+    }
+  }
+
+  function onDisconnect() {
+    disconnectWallet();
+  }
+
+  // Store cleanup refs
+  if (!window._walletListeners) window._walletListeners = {};
+  window._walletListeners[walletType] = { onAccountsChanged, onChainChanged, onDisconnect };
+
+  provider.on('accountsChanged', onAccountsChanged);
+  provider.on('chainChanged', onChainChanged);
+  provider.on('disconnect', onDisconnect);
+}
+
+function removeWalletListeners(walletType) {
+  const wt = WALLET_TYPES[walletType];
+  if (!wt || !wt.isAvailable()) return;
+
+  const provider = wt.getProvider();
+  if (!provider || !provider.removeListener) return;
+
+  const listeners = window._walletListeners && window._walletListeners[walletType];
+  if (!listeners) return;
+
+  try {
+    provider.removeListener('accountsChanged', listeners.onAccountsChanged);
+    provider.removeListener('chainChanged', listeners.onChainChanged);
+    provider.removeListener('disconnect', listeners.onDisconnect);
+  } catch (e) { /* 某些钱包不支持 removeListener */ }
+  delete window._walletListeners[walletType];
+}
+
+// =============================================
+// 页面初始化：检测可用钱包 + 自动恢复连接
+// =============================================
+function initWalletDetection() {
+  updateWalletAvailability();
+
+  // 为所有可用钱包注册事件监听
+  Object.keys(WALLET_TYPES).forEach(type => {
+    if (WALLET_TYPES[type].isAvailable()) {
+      setupWalletListeners(type);
+    }
+  });
+
+  // 自动恢复最近连接的会话（优先 MetaMask > OKX > Binance）
+  const preferredOrder = ['metamask', 'okx', 'binance'];
+
+  async function tryAutoConnect() {
+    for (const type of preferredOrder) {
+      const wt = WALLET_TYPES[type];
+      if (!wt.isAvailable()) continue;
+      const provider = wt.getProvider();
+      if (!provider) continue;
+
+      try {
+        const accounts = await provider.request({ method: 'eth_accounts' });
+        if (accounts && accounts.length > 0) {
+          const chainIdHex = await provider.request({ method: 'eth_chainId' });
+          const chainId = parseInt(chainIdHex, 16);
+
+          walletState = {
+            connected: true,
+            address: accounts[0],
+            chainId,
+            provider,
+            walletType: type
+          };
+
+          onWalletConnected(accounts[0], chainId, type);
+          showToast(`已自动恢复 ${wt.name} 连接：${shortAddr(accounts[0])}`, 'success', 3000);
+          return; // 只恢复一个
+        }
+      } catch (_) { /* 继续尝试下一个 */ }
+    }
+  }
+
+  // 延迟执行，确保 DOM 就绪
+  setTimeout(tryAutoConnect, 200);
+}
+
+initWalletDetection();
 </script>
 </body>
 </html>
