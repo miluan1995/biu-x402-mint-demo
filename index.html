@@ -16,9 +16,10 @@
     <div class="card heroCard"><div class="heroInner">
       <div class="kicker">代币名称</div>
       <h1>BIU</h1>
-      <p class="subtitle">BIU 是 BSC 上的 x402 fair mint 代币。网页现在不再做钱包连接，只展示代币、Mint Skill 安装方式和实时 mint 数据。玩家让自己的 Agent 安装 Skill 后，用 USDC 走 quote / dry-run / 确认 mint 流程。</p>
+      <p class="subtitle">BIU 的 mint 采用 x402 支付协议 + Permit2 授权签名 + 自托管 facilitator / relayer 代付 gas。玩家钱包只需要准备 BSC 链上的 USDC，不需要准备 BNB；Agent 会先生成 quote / dry-run，确认后由 relayer 完成链上 mint。</p>
       <div class="ctaRow"><a class="btn" href="#install">安装 Mint Skill</a><a class="btn secondary" href="#data">查看实时数据</a><a class="btn ghost" href="#contracts">合约地址</a></div>
       <div class="grid">
+        <div class="safeBox"><div class="muted mono">钱包准备</div><div class="metric">只要 USDC</div><p class="muted">玩家钱包只需要 BSC USDC，不需要准备 BNB gas。</p></div>
         <div class="safeBox"><div class="muted mono">Mint 价格</div><div class="metric">12 USDC</div><p class="muted">每份 mint 得到 1,000,000 BIU。</p></div>
         <div class="safeBox"><div class="muted mono">单钱包上限</div><div class="metric">10 份</div><p class="muted">最多 120 USDC / 10,000,000 BIU。</p></div>
         <div class="locked"><div class="muted mono">真实执行</div><b class="danger">必须确认后广播</b><p class="muted">Skill 默认只 dry-run，不签名、不扣款、不广播。</p></div>
@@ -28,7 +29,7 @@
     <aside id="install" class="card install">
       <div class="kicker">Mint Skill 安装</div>
       <h2>给玩家 Agent 的安装说明</h2>
-      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入“mint 1 份 BIU”时，先生成报价和 dry-run，不会直接扣 USDC。</p>
+      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入“mint 1 份 BIU”时，先生成报价和 dry-run。技术路径是 x402 + Permit2：玩家签授权，facilitator/relayer 代付 BNB gas，所以玩家只需要 USDC，不需要 BNB。</p>
       <pre><code>agent-skill/bui-mint/SKILL.md</code></pre>
       <p class="muted">验证安装：</p>
       <pre><code>cd bsc-x402-launchpad
