@@ -78,7 +78,9 @@ const stepNames=['安装 Mint Skill','输入 mint 1 份 BIU','Agent 输出 quote
 function fmt(n){return Number(n||0).toLocaleString('en-US')}
 function paintSteps(active=3){els.steps.innerHTML=stepNames.map((s,i)=>'<div class="step '+(i<active?'done':'')+'">'+(i+1)+'. '+s+'</div>').join('')}
 function applyStatus(status={}){const t=status.tokenomics||TOKENOMICS;const q=Number(status.queuedMints||0);const max=Number(t.maxMintCount||500);const minted=q*Number(t.mintAmount||1000000);const escrow=status.escrow||{};const collected=Number(escrow.collected||0);const target=Number(escrow.target||t.saleTargetUsdc||6000);els.mintLabel.textContent=q+' / '+max+' 份';els.tokenLabel.textContent=fmt(minted)+' BIU';els.escrowLabel.textContent=fmt(collected)+' / '+fmt(target)+' USDC';els.poolLabel.textContent=escrow.readyForPool?'可进入开池':'未开启';els.mintBar.style.width=Math.min(100,q/max*100)+'%';els.escrowBar.style.width=target?Math.min(100,collected/target*100)+'%':'0%'}
-async function refresh(){try{const r=await fetch(basePath+'/status',{cache:'no-store'});if(!r.ok)throw new Error('status '+r.status);applyStatus(await r.json());els.log.textContent='实时数据已加载。网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。'}catch(e){applyStatus({});els.log.textContent='当前是静态展示模式：后端实时接口不可用或未部署。Skill 安装和 dry-run 命令仍可复制使用。'}}
+async function refresh(){const urls=['./status.json',basePath+'/status'];for(const u of urls){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('status '+r.status);const data=await r.json();applyStatus(data);els.log.textContent=(data.source==='bsc_rpc'?'半实时数据已加载：读取 GitHub Pages status.json，来源 BSC RPC 快照。':'数据快照已加载：'+(data.source||'status.json'))+'
+更新时间：'+(data.generatedAt||'未知')+'
+网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。';return}catch(e){}}applyStatus({});els.log.textContent='当前是静态展示模式：status.json 和后端实时接口都不可用。Skill 安装和 dry-run 命令仍可复制使用。'}
 els.demoBtn.addEventListener('click',()=>{paintSteps(4);els.log.textContent='dry-run 演示：12 USDC -> 1,000,000 BIU；生成 Permit2 typedData 和 relayer calldata；signs=false；broadcasts=false；executeBlocked=true。'});
 paintSteps(3);refresh();setInterval(refresh,pollMs);
 </script>

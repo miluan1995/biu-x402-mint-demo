@@ -1,0 +1,92 @@
+{
+  "ok": true,
+  "mode": "bui_github_pages_status_json",
+  "source": "bsc_rpc",
+  "generatedAt": "2026-05-21T04:58:21.217Z",
+  "updateHint": "GitHub Pages semi-realtime snapshot; regenerate/push periodically for fresh data.",
+  "error": null,
+  "deployed": {
+    "chain": "bsc",
+    "network": "eip155:56",
+    "chainId": 56,
+    "launchpad": "0x1fFcfEb0B9ca179bB118141646891773D4650C6a",
+    "token": "0xFAB779872E0e84976D55a9Ef0aFb34475201aCc4",
+    "payTo": "0x11e82531407413f94fc9f6c8e99b5df0c76bb83f",
+    "usdc": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    "rpc": "https://bsc-dataseed.binance.org/"
+  },
+  "launchId": "bui-mainnet",
+  "blockNumber": 99520769,
+  "chainId": 56,
+  "launchState": 1,
+  "tokenomics": {
+    "totalSupply": 1000000000,
+    "fairMint": 500000000,
+    "okxAgentAllocation": 30000000,
+    "okxAgentAllocationPercent": 3,
+    "okxAgentWallet": "0x11e82531407413f94fc9f6c8e99b5df0c76bb83f",
+    "autoPoolAllocation": 470000000,
+    "autoPoolAllocationPercent": 47,
+    "lpReserve": 470000000,
+    "teamEcosystem": 0,
+    "mintAmount": 1000000,
+    "mintPriceUsdc": "12",
+    "mintPriceUsdcRaw": "12000000000000000000",
+    "minMintUsdc": "12",
+    "minMintUsdcRaw": "12000000000000000000",
+    "maxMintUsdcPerTx": "120",
+    "maxMintUsdcPerTxRaw": "120000000000000000000",
+    "maxMintUsdcPerWallet": "120",
+    "maxMintUsdcPerWalletRaw": "120000000000000000000",
+    "saleTargetBnbEquivalent": "10",
+    "bnbUsdcReferencePrice": "600",
+    "saleTargetUsdc": "6000",
+    "saleTargetUsdcRaw": "6000000000000000000000",
+    "paymentAsset": "USDC",
+    "paymentToken": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    "paymentDecimals": 18,
+    "transferMethod": "permit2",
+    "gasSponsoring": "erc20ApprovalGasSponsoring",
+    "userPaysGas": false,
+    "facilitatorPaysGas": true,
+    "maxMintCount": 500,
+    "network": "eip155:56"
+  },
+  "queuedMints": 0,
+  "mintedTokens": 0,
+  "usedPaymentHashes": 0,
+  "pendingSettlements": 0,
+  "broadcastApprovals": 0,
+  "escrow": {
+    "asset": "USDC",
+    "payTo": "0x11e82531407413f94fc9f6c8e99b5df0c76bb83f",
+    "collectedRaw": "192207603233508059",
+    "collected": "0.192207603233508059",
+    "targetRaw": "6000000000000000000000",
+    "target": "6000",
+    "percent": 0,
+    "readyForPool": false
+  },
+  "frontend": {
+    "playerNeeds": [
+      "BSC USDC only"
+    ],
+    "playerDoesNotNeed": [
+      "BNB gas"
+    ],
+    "tech": [
+      "x402",
+      "Permit2",
+      "self-host facilitator",
+      "relayer gas sponsorship"
+    ]
+  },
+  "safety": {
+    "signs": false,
+    "broadcasts": false,
+    "usesPrivateKey": false,
+    "rpcReadOnly": true,
+    "noAdmin": true,
+    "noPancake": true
+  }
+}
