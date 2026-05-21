@@ -1,98 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-  <title>BIU x402 Launchpad Mint</title>
-
+  <title>BIU Mint Skill 安装页</title>
   <style>
-    :root{--bg:#050806;--ink:#effff6;--muted:#93aa9d;--line:#20382d;--card:#0b1510;--card2:#101e17;--green:#35e09d;--lime:#dfff70;--red:#ff9e92;--amber:#ffd36a;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% -10%,#1c4d39 0,#050806 34%),radial-gradient(circle at 85% 15%,#dfff701a,transparent 26%),#050806}.wrap{max-width:1180px;margin:auto;padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:3;padding:12px 0;background:linear-gradient(180deg,#050806f2,#05080600)}.brand{font-family:var(--mono);letter-spacing:.18em;color:var(--green);font-weight:900}.pill,.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#08120e;border-radius:999px;padding:7px 10px;font:11px var(--mono);color:var(--muted)}.tag{border-color:#35e09d55;color:var(--green)}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1914,#08100c);border-radius:24px;padding:22px;box-shadow:0 24px 90px #0008}.heroCard{position:relative;overflow:hidden;min-height:520px}.heroCard:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 78% 18%,#35e09d2e,transparent 34%),radial-gradient(circle at 18% 84%,#dfff7020,transparent 28%);pointer-events:none}.heroInner{position:relative}.kicker{font:12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,112px);line-height:.86;letter-spacing:-.08em;margin:14px 0 12px}.subtitle{font-size:18px;color:#c9ddcf;max-width:650px}.muted{color:var(--muted)}.danger{color:var(--red)}.mono{font-family:var(--mono)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:30px;font-weight:950;letter-spacing:-.05em}.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button,.btn{min-height:48px;border:0;border-radius:15px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#04100b;font-weight:950;text-decoration:none;cursor:pointer}.secondary,button.secondary{background:#101d17;color:var(--ink);border:1px solid var(--line)}.ghost{background:transparent;color:var(--ink);border:1px dashed var(--line)}button:disabled{opacity:.55;cursor:not-allowed}.walletPanel{display:flex;flex-direction:column;gap:10px}.walletRow{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:13px;border:1px solid var(--line);background:#0b1511;border-radius:16px;color:var(--ink);text-decoration:none}.walletRow:hover{border-color:var(--green);background:#10251e}.icon{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#35e09d18;color:var(--green);font:900 12px var(--mono)}.bar{height:16px;border:1px solid #24483b;background:#10251e;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime))}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}.step{padding:12px;border-radius:14px;background:#10251e;border:1px solid #24483b;color:var(--muted);font:12px var(--mono)}.done{border-color:var(--green);color:#b9ffdf}.locked{border:1px solid #ffd36a55;background:#ffd36a12;border-radius:18px;padding:14px}.safeBox{border:1px solid #35e09d44;background:#35e09d10;border-radius:18px;padding:14px}.pixel{image-rendering:pixelated;display:grid;grid-template-columns:repeat(9,1fr);gap:4px;max-width:260px;margin:22px auto}.px{aspect-ratio:1;border-radius:4px;background:#15251e}.px:nth-child(3n){background:var(--green)}.px:nth-child(4n){background:var(--lime)}.px:nth-child(7n){background:#365346}pre{white-space:pre-wrap;word-break:break-word;background:#050907;border:1px solid var(--line);padding:14px;border-radius:14px;max-height:260px;overflow:auto}@media(max-width:860px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}h1{font-size:62px}.card{padding:17px;border-radius:19px}}
+    :root{--bg:#050806;--ink:#effff6;--muted:#93aa9d;--line:#20382d;--card:#0b1510;--card2:#101e17;--green:#35e09d;--lime:#dfff70;--red:#ff9e92;--amber:#ffd36a;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% -10%,#1c4d39 0,#050806 34%),radial-gradient(circle at 85% 15%,#dfff701a,transparent 26%),#050806}.wrap{max-width:1180px;margin:auto;padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:3;padding:12px 0;background:linear-gradient(180deg,#050806f2,#05080600)}.brand{font-family:var(--mono);letter-spacing:.18em;color:var(--green);font-weight:900}.pill,.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#08120e;border-radius:999px;padding:7px 10px;font:11px var(--mono);color:var(--muted)}.tag{border-color:#35e09d55;color:var(--green)}.hero{display:grid;grid-template-columns:1fr .92fr;gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1914,#08100c);border-radius:24px;padding:22px;box-shadow:0 24px 90px #0008}.heroCard{position:relative;overflow:hidden;min-height:520px}.heroCard:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 78% 18%,#35e09d2e,transparent 34%),radial-gradient(circle at 18% 84%,#dfff7020,transparent 28%);pointer-events:none}.heroInner{position:relative}.kicker{font:12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,116px);line-height:.86;letter-spacing:-.08em;margin:14px 0 12px}.subtitle{font-size:18px;color:#c9ddcf;max-width:660px}.muted{color:var(--muted)}.danger{color:var(--red)}.mono{font-family:var(--mono)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:30px;font-weight:950;letter-spacing:-.05em}.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button,.btn{min-height:48px;border:0;border-radius:15px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#04100b;font-weight:950;text-decoration:none;cursor:pointer}.secondary,button.secondary{background:#101d17;color:var(--ink);border:1px solid var(--line)}.ghost{background:transparent;color:var(--ink);border:1px dashed var(--line)}.bar{height:16px;border:1px solid #24483b;background:#10251e;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime))}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.step{padding:12px;border-radius:14px;background:#10251e;border:1px solid #24483b;color:var(--muted);font:12px var(--mono)}.done{border-color:var(--green);color:#b9ffdf}.locked{border:1px solid #ffd36a55;background:#ffd36a12;border-radius:18px;padding:14px}.safeBox{border:1px solid #35e09d44;background:#35e09d10;border-radius:18px;padding:14px}.addr{font-family:var(--mono);font-size:12px;word-break:break-all;color:#c9ddcf}.install{display:flex;flex-direction:column;gap:10px}pre{white-space:pre-wrap;word-break:break-word;background:#050907;border:1px solid var(--line);padding:14px;border-radius:14px;max-height:260px;overflow:auto}code{font-family:var(--mono)}@media(max-width:860px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}h1{font-size:62px}.card{padding:17px;border-radius:19px}}
   </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="nav"><div class="brand">BIU / BSC x402 FAIR MINT</div><div class="pill">● BNB Chain · player mint preview</div></div>
+  <div class="nav"><div class="brand">BIU / MINT SKILL</div><div class="pill">● BSC 主网 · Agent Skill 安装页</div></div>
+
   <section class="hero">
     <div class="card heroCard"><div class="heroInner">
-      <div class="kicker">BSC x402 launchpad</div>
-      <h1>Mint BIU<br/>from your wallet.</h1>
-      <p class="subtitle">A player-facing mint page: connect wallet, switch to BNB Chain, sign x402 Permit2 in Browser, then Submit BIU Payment. Current deployment is locked preview: no real payment / no broadcast / no private key.</p>
-      <div class="ctaRow"><button id="topConnect" data-testid="button-connect-wallet">Connect Wallet</button><a class="btn secondary" href="#wallets">Choose Wallet</a><a class="btn ghost" href="#flow">View Mint Flow</a></div>
+      <div class="kicker">代币名称</div>
+      <h1>BIU</h1>
+      <p class="subtitle">BIU 是 BSC 上的 x402 fair mint 代币。网页现在不再做钱包连接，只展示代币、Mint Skill 安装方式和实时 mint 数据。玩家让自己的 Agent 安装 Skill 后，用 USDC 走 quote / dry-run / 确认 mint 流程。</p>
+      <div class="ctaRow"><a class="btn" href="#install">安装 Mint Skill</a><a class="btn secondary" href="#data">查看实时数据</a><a class="btn ghost" href="#contracts">合约地址</a></div>
       <div class="grid">
-        <div class="safeBox"><div class="muted mono">Can the webpage mint?</div><b>Yes — users can mint directly from the webpage with a browser wallet signature.</b><p class="muted">Agent/facilitator is optional backend, not required for user mint.</p></div>
-        <div class="locked"><div class="muted mono">Production state</div><b class="danger">Mint backend is locked</b><p class="muted">UI is ready for wallet testing. Real USDC settlement and mint relay stay blocked until explicit approval.</p></div>
+        <div class="safeBox"><div class="muted mono">Mint 价格</div><div class="metric">12 USDC</div><p class="muted">每份 mint 得到 1,000,000 BIU。</p></div>
+        <div class="safeBox"><div class="muted mono">单钱包上限</div><div class="metric">10 份</div><p class="muted">最多 120 USDC / 10,000,000 BIU。</p></div>
+        <div class="locked"><div class="muted mono">真实执行</div><b class="danger">必须确认后广播</b><p class="muted">Skill 默认只 dry-run，不签名、不扣款、不广播。</p></div>
       </div>
-      <div class="pixel"><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div><div class="px"></div></div>
     </div></div>
-    <aside id="wallets" class="card">
-      <div class="kicker">Mobile Wallet Mint</div>
-      <h2>Choose detected wallet</h2>
-      <p class="muted">BPEG-style connector UX: EIP-6963 + injected providers, then BSC switch. If no desktop wallet appears, unlock extension and allow site access.</p>
-      <button id="connectBtn" data-testid="button-connect-wallet">Connect Wallet</button>
-      <div class="muted mono">Connect mobile wallet via deep links below if no injected provider is available.</div>
-      <div id="walletStatus" class="pill">Wallet not connected</div>
-      <div id="walletHint" class="muted">Wallets are detected automatically. Desktop: unlock the extension and allow this site. Mobile: open with a wallet app below.</div>
-      <pre id="walletDebug" style="max-height:120px;font-size:11px">Wallet debug: page loaded. Tap a button to test click handler.</pre>
-      <div id="connectorList" class="walletPanel"></div>
-      <div class="walletPanel">
-        <button id="okxConnectBtn" class="walletRow secondary"><span><span class="icon">OK</span> Connect OKX Built-in Wallet</span><span class="tag">No SDK</span></button>
-        <a id="okxLink" class="walletRow" href="#"><span><span class="icon">OK</span> Open in OKX Wallet</span><span class="tag">Mobile</span></a>
-        <a id="mmLink" class="walletRow" href="#"><span><span class="icon">MM</span> Open in MetaMask</span><span class="tag">Mobile</span></a>
-        <a id="trustLink" class="walletRow" href="#"><span><span class="icon">TW</span> Open in Trust Wallet</span><span class="tag">BNB ready</span></a>
-        <a id="bitgetLink" class="walletRow" href="#"><span><span class="icon">BG</span> Open in Bitget Wallet</span><span class="tag">BNB native</span></a>
-        <div class="pill">WalletConnect QR fallback: add project id before production</div>
-      </div>
+
+    <aside id="install" class="card install">
+      <div class="kicker">Mint Skill 安装</div>
+      <h2>给玩家 Agent 的安装说明</h2>
+      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入“mint 1 份 BIU”时，先生成报价和 dry-run，不会直接扣 USDC。</p>
+      <pre><code>agent-skill/bui-mint/SKILL.md</code></pre>
+      <p class="muted">验证安装：</p>
+      <pre><code>cd bsc-x402-launchpad
+node scripts/bui-mint.js agent-context --json --no-input
+./agent-skill/bui-mint/demo.sh</code></pre>
+      <p class="muted">玩家 Agent 常用命令：</p>
+      <pre><code>node scripts/bui-mint.js quote --payer &lt;玩家钱包&gt; --lots 1 --json --no-input
+node scripts/bui-mint.js dry-run --payer &lt;玩家钱包&gt; --lots 1 --json --no-input</code></pre>
+      <div class="pill">安全：signs=false · broadcasts=false · no private key</div>
     </aside>
   </section>
 
-  <section class="grid">
-    <div class="card"><div class="muted mono">Realtime Mint Progress</div><div id="mintLabel" class="metric">0/500 mints queued</div><div class="bar"><div id="mintBar" class="fill"></div></div></div>
-    <div class="card"><div class="muted mono">BIU minted</div><div id="tokenLabel" class="metric">0</div><p class="muted">BIU Allocation Lock · OKX Agent allocation 3% · Auto-pool allocation 47%</p></div>
-    <div class="card"><div class="muted mono">Escrow</div><div id="escrowLabel" class="metric">0 / 6000 USDC</div><div class="bar"><div id="escrowBar" class="fill"></div></div></div>
-    <div class="card"><div class="muted mono">Pool</div><div class="metric">BIU/WBNB</div><p class="muted">Gas reserve policy: start with 0.1 BNB. manually swap collected USDC to BNB. Final liquidity is BIU/WBNB. No automatic swap is written into the Launchpad contract.</p></div>
+  <section id="data" class="grid">
+    <div class="card"><div class="muted mono">Mint 进度</div><div id="mintLabel" class="metric">0 / 500 份</div><div class="bar"><div id="mintBar" class="fill"></div></div></div>
+    <div class="card"><div class="muted mono">已 mint BIU</div><div id="tokenLabel" class="metric">0</div><p class="muted">公平 mint 总量 500,000,000 BIU。</p></div>
+    <div class="card"><div class="muted mono">USDC 募集</div><div id="escrowLabel" class="metric">0 / 6000 USDC</div><div class="bar"><div id="escrowBar" class="fill"></div></div></div>
+    <div class="card"><div class="muted mono">池子状态</div><div id="poolLabel" class="metric">未开启</div><p class="muted">满 500 份后才进入 BIU/WBNB 池子流程。</p></div>
   </section>
 
-  <section id="flow" class="card">
-    <div class="kicker">Mint execution path</div>
+  <section class="card">
+    <div class="kicker">Mint Skill 流程</div>
     <div class="steps" id="steps"></div>
-    <div class="ctaRow"><button id="runBtn">Run dry-run flow</button><span class="pill">Demo mode: no real wallet · no broadcast · no private key · no real payment</span></div>
-    <pre id="log">Connect wallet first. Real mint is intentionally blocked until backend/payment approval gates are opened.</pre>
+    <div class="ctaRow"><button id="demoBtn">查看 dry-run 演示</button><span class="pill">网页只展示，不连接钱包</span></div>
+    <pre id="log">等待实时数据加载。Skill 真实 mint 仍需要 USDC 到账证明、安全预检、明确确认和链上复核。</pre>
   </section>
 
-  <section class="card"><h2>Safety lock</h2><p class="muted">Payer placeholder: 0x11e82531407413f94fc9f6c8e99b5df0c76bb83f. This public page is for private UI/wallet testing only.</p></section>
+  <section id="contracts" class="card">
+    <h2>合约与参数</h2>
+    <div class="grid">
+      <div><div class="muted mono">Launchpad</div><div class="addr">0x1fFcfEb0B9ca179bB118141646891773D4650C6a</div></div>
+      <div><div class="muted mono">BIU Token</div><div class="addr">0xFAB779872E0e84976D55a9Ef0aFb34475201aCc4</div></div>
+      <div><div class="muted mono">USDC</div><div class="addr">0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d</div></div>
+      <div><div class="muted mono">Permit2</div><div class="addr">0x000000000022D473030F116dDEE9F6B43aC78BA3</div></div>
+      <div><div class="muted mono">payTo / OKX Agent</div><div class="addr">0x11e82531407413f94fc9f6c8e99b5df0c76bb83f</div></div>
+      <div><div class="muted mono">Verifier / Relayer</div><div class="addr">0x64915db6148209974799CC6393b0dd0071DAD091</div></div>
+    </div>
+  </section>
 </div>
 <script>
-const basePath="/launches/demo", pollMs=2000;
+const basePath="/launches/demo", pollMs=5000;
+const TOKENOMICS={"totalSupply":1000000000,"fairMint":500000000,"okxAgentAllocation":30000000,"okxAgentAllocationPercent":3,"okxAgentWallet":"0x11e82531407413f94fc9f6c8e99b5df0c76bb83f","autoPoolAllocation":470000000,"autoPoolAllocationPercent":47,"lpReserve":470000000,"teamEcosystem":0,"mintAmount":1000000,"mintPriceUsdc":"12","mintPriceUsdcRaw":"12000000000000000000","minMintUsdc":"12","minMintUsdcRaw":"12000000000000000000","maxMintUsdcPerTx":"120","maxMintUsdcPerTxRaw":"120000000000000000000","maxMintUsdcPerWallet":"120","maxMintUsdcPerWalletRaw":"120000000000000000000","saleTargetBnbEquivalent":"10","bnbUsdcReferencePrice":"600","saleTargetUsdc":"6000","saleTargetUsdcRaw":"6000000000000000000000","paymentAsset":"USDC","paymentToken":"0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d","paymentDecimals":18,"transferMethod":"permit2","gasSponsoring":"erc20ApprovalGasSponsoring","userPaysGas":false,"facilitatorPaysGas":true,"maxMintCount":500,"network":"eip155:56"};
+const DEPLOYED={"chain":"BSC mainnet","network":"eip155:56","launchpad":"0x1fFcfEb0B9ca179bB118141646891773D4650C6a","token":"0xFAB779872E0e84976D55a9Ef0aFb34475201aCc4","usdc":"0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d","payTo":"0x11e82531407413f94fc9f6c8e99b5df0c76bb83f","verifier":"0x64915db6148209974799CC6393b0dd0071DAD091","permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","x402ExactPermit2Proxy":"0x402085c248EeA27D92E8b30b2C58ed07f9E20001"};
 const $=id=>document.getElementById(id);
-const els={connectBtn:$('connectBtn'),topConnect:$('topConnect'),okxConnectBtn:$('okxConnectBtn'),walletStatus:$('walletStatus'),walletHint:$('walletHint'),walletDebug:$('walletDebug'),connectorList:$('connectorList'),okxLink:$('okxLink'),mmLink:$('mmLink'),trustLink:$('trustLink'),bitgetLink:$('bitgetLink'),mintLabel:$('mintLabel'),tokenLabel:$('tokenLabel'),escrowLabel:$('escrowLabel'),mintBar:$('mintBar'),escrowBar:$('escrowBar'),steps:$('steps'),runBtn:$('runBtn'),log:$('log')};
-function logEvent(msg){const line=new Date().toLocaleTimeString()+' '+msg;if(els.walletDebug)els.walletDebug.textContent=(els.walletDebug.textContent+'
-'+line).split('
-').slice(-10).join('
-');}
-window.addEventListener('error',e=>logEvent('JS error: '+(e.message||e.error||'unknown')));
-window.addEventListener('unhandledrejection',e=>logEvent('Promise error: '+(e.reason&&e.reason.message?e.reason.message:e.reason||'unknown')));
-const BSC={chainId:'0x38',chainName:'BNB Smart Chain',nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},rpcUrls:['https://bsc-dataseed.binance.org/'],blockExplorerUrls:['https://bscscan.com']};
-let done=0;
-const stepNames=['Connect Wallet','Sign x402 Permit2 in Browser','Submit BIU Payment','Static Sim','Await Approval','Receipt Verify','BIU Mint Queued'];
-function short(a){return a?a.slice(0,6)+'…'+a.slice(-4):''}
-function providerName(p){if(!p)return 'none'; if(p.isOkxWallet||p.isOKExWallet)return 'OKX Wallet'; if(p.isMetaMask)return 'MetaMask'; if(p.isTrust||p.isTrustWallet)return 'Trust Wallet'; if(p.isBitKeep||p.isBitget||p.isBitgetWallet)return 'Bitget Wallet'; if(p.isBinance||p.bnbSign||p._isBinanceChain)return 'Binance Wallet'; return 'Injected Wallet'}
-function getBuiltInProvider(){const candidates=[window.okxwallet,window.okxwallet&&window.okxwallet.ethereum,window.ethereum,window.BinanceChain,window.bitkeep&&window.bitkeep.ethereum,window.bitgetWallet&&window.bitgetWallet.ethereum,window.trustwallet&&window.trustwallet.ethereum].filter(Boolean);return candidates.find(p=>p&&typeof p.request==='function')||null}
-function getOkxProvider(){const candidates=[window.okxwallet,window.okxwallet&&window.okxwallet.ethereum,window.ethereum].filter(Boolean);return candidates.find(p=>p&&typeof p.request==='function')||null}
-function detect(){const p=getBuiltInProvider();els.connectorList.innerHTML=p?'<button type="button" class="walletRow secondary" data-testid="button-connector-0"><span><span class="icon">IN</span> '+providerName(p)+'</span><span class="tag">Built-in</span></button>':'<div class="pill">No built-in provider detected yet</div>';const b=els.connectorList.querySelector('button');if(b)b.addEventListener('click',e=>{e.preventDefault();connectProvider(p);});els.walletHint.textContent=p?'Detected built-in provider: '+providerName(p)+'. No external SDK loaded.':'No built-in wallet provider detected. Open this page inside OKX Wallet App browser, not Telegram preview.';logEvent('detect provider: '+(p?providerName(p):'none'));return p}
-async function switchBsc(p){try{await p.request({method:'wallet_switchEthereumChain',params:[{chainId:BSC.chainId}]})}catch(e){if(e&&e.code===4902)await p.request({method:'wallet_addEthereumChain',params:[BSC]});else if(e&&e.code!==4001)throw e}}
-async function connectProvider(p){logEvent('connect button tapped');p=p||getBuiltInProvider();if(!p){els.walletStatus.textContent='Click works, but no built-in provider found. Use OKX Wallet App browser address bar.';detect();return}try{els.walletStatus.textContent='Opening '+providerName(p)+' built-in provider…';logEvent('request eth_requestAccounts');const accounts=await p.request({method:'eth_requestAccounts'});await switchBsc(p);els.walletStatus.textContent='Connected '+short(accounts&&accounts[0])+' on BNB Chain';done=Math.max(done,1);paintSteps();logEvent('connected')}catch(e){els.walletStatus.textContent='Wallet connect failed: '+(e&&e.message?e.message:e);logEvent('connect failed')}}
-async function connectOkxBuiltIn(){logEvent('OKX built-in button tapped');const p=getOkxProvider();if(!p){els.walletStatus.textContent='Click works, but OKX built-in provider is missing. Open inside OKX Wallet App browser.';detect();return}return connectProvider(p)}
-function onTap(fn){return e=>{e.preventDefault();fn();};}
-els.connectBtn.addEventListener('click',onTap(()=>connectProvider(getBuiltInProvider())));els.topConnect.addEventListener('click',onTap(()=>connectProvider(getBuiltInProvider())));els.okxConnectBtn.addEventListener('click',onTap(connectOkxBuiltIn));
-function walletUrl(){return encodeURIComponent(location.href)}
-els.okxLink.href='okx://wallet/dapp/url?dappUrl='+walletUrl();els.mmLink.href='https://metamask.app.link/dapp/'+location.host+location.pathname;els.trustLink.href='https://link.trustwallet.com/open_url?coin_id=20000714&url='+walletUrl();els.bitgetLink.href='https://bkcode.vip?action=dapp&url='+walletUrl();
-function progressView(s){return {q:s.queuedMints||0,max:(s.tokenomics||{}).maxMintCount||500,minted:(s.queuedMints||0)*((s.tokenomics||{}).mintAmount||1000000),mintPct:Math.min(100,((s.queuedMints||0)/((s.tokenomics||{}).maxMintCount||500))*100),escrow:s.escrow||{collected:'0',target:'6000',readyForPool:false},escrowPct:s.escrow&&s.escrow.target?Math.min(100,Number(s.escrow.collected||0)/Number(s.escrow.target||6000)*100):0}}
-async function refresh(){try{const r=await fetch(basePath+'/status');const status=await r.json();const p=progressView(status);els.mintLabel.textContent=p.q+'/'+p.max+' mints queued';els.tokenLabel.textContent=String(p.minted);els.escrowLabel.textContent=(p.escrow.collected||'0')+' / '+(p.escrow.target||'6000')+' USDC';els.mintBar.style.width=p.mintPct+'%';els.escrowBar.style.width=p.escrowPct+'%'}catch(e){els.log.textContent='Static public preview: backend status unavailable. Wallet UI remains testable; real mint stays locked.'}}
-function paintSteps(){els.steps.innerHTML=stepNames.map((s,i)=>'<div class="step '+(i<done?'done':'')+'">'+(i+1)+'. '+s+'</div>').join('')}
-async function runDemo(){done=1;paintSteps();els.log.textContent='Dry-run only. Creating mock x402 payment intent…';done=2;paintSteps();els.log.textContent+='
-Mock browser-wallet Permit2 signature prepared (no real wallet in demo).';done=7;paintSteps();els.log.textContent+='
-BIU Mint Queued (demo). Safety: { broadcasts:false, usesRealPrivateKey:false, realPayment:false }'}
-els.runBtn.addEventListener('click',onTap(runDemo));paintSteps();detect();refresh();setInterval(refresh,pollMs);logEvent('pure built-in handlers attached; no OKX SDK/CDN');
+const els={mintLabel:$('mintLabel'),tokenLabel:$('tokenLabel'),escrowLabel:$('escrowLabel'),poolLabel:$('poolLabel'),mintBar:$('mintBar'),escrowBar:$('escrowBar'),steps:$('steps'),log:$('log'),demoBtn:$('demoBtn')};
+const stepNames=['安装 Mint Skill','输入 mint 1 份 BIU','Agent 输出 quote','Agent 执行 dry-run','玩家钱包签名/授权','验证 USDC 到账','确认后 relayer mint'];
+function fmt(n){return Number(n||0).toLocaleString('en-US')}
+function paintSteps(active=3){els.steps.innerHTML=stepNames.map((s,i)=>'<div class="step '+(i<active?'done':'')+'">'+(i+1)+'. '+s+'</div>').join('')}
+function applyStatus(status={}){const t=status.tokenomics||TOKENOMICS;const q=Number(status.queuedMints||0);const max=Number(t.maxMintCount||500);const minted=q*Number(t.mintAmount||1000000);const escrow=status.escrow||{};const collected=Number(escrow.collected||0);const target=Number(escrow.target||t.saleTargetUsdc||6000);els.mintLabel.textContent=q+' / '+max+' 份';els.tokenLabel.textContent=fmt(minted)+' BIU';els.escrowLabel.textContent=fmt(collected)+' / '+fmt(target)+' USDC';els.poolLabel.textContent=escrow.readyForPool?'可进入开池':'未开启';els.mintBar.style.width=Math.min(100,q/max*100)+'%';els.escrowBar.style.width=target?Math.min(100,collected/target*100)+'%':'0%'}
+async function refresh(){try{const r=await fetch(basePath+'/status',{cache:'no-store'});if(!r.ok)throw new Error('status '+r.status);applyStatus(await r.json());els.log.textContent='实时数据已加载。网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。'}catch(e){applyStatus({});els.log.textContent='当前是静态展示模式：后端实时接口不可用或未部署。Skill 安装和 dry-run 命令仍可复制使用。'}}
+els.demoBtn.addEventListener('click',()=>{paintSteps(4);els.log.textContent='dry-run 演示：12 USDC -> 1,000,000 BIU；生成 Permit2 typedData 和 relayer calldata；signs=false；broadcasts=false；executeBlocked=true。'});
+paintSteps(3);refresh();setInterval(refresh,pollMs);
 </script>
 </body>
 </html>
