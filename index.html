@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-  <title>BIU Mint Skill 安装页</title>
+  <title>BIU Mint</title>
   <style>
     :root{--bg:#050806;--ink:#effff6;--muted:#93aa9d;--line:#20382d;--card:#0b1510;--card2:#101e17;--green:#35e09d;--lime:#dfff70;--red:#ff9e92;--amber:#ffd36a;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% -10%,#1c4d39 0,#050806 34%),radial-gradient(circle at 85% 15%,#dfff701a,transparent 26%),#050806}.wrap{max-width:1180px;margin:auto;padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:3;padding:12px 0;background:linear-gradient(180deg,#050806f2,#05080600)}.brand{font-family:var(--mono);letter-spacing:.18em;color:var(--green);font-weight:900}.pill,.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#08120e;border-radius:999px;padding:7px 10px;font:11px var(--mono);color:var(--muted)}.tag{border-color:#35e09d55;color:var(--green)}.hero{display:grid;grid-template-columns:1fr .92fr;gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1914,#08100c);border-radius:24px;padding:22px;box-shadow:0 24px 90px #0008}.heroCard{position:relative;overflow:hidden;min-height:520px}.heroCard:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 78% 18%,#35e09d2e,transparent 34%),radial-gradient(circle at 18% 84%,#dfff7020,transparent 28%);pointer-events:none}.heroInner{position:relative}.kicker{font:12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(54px,10vw,116px);line-height:.86;letter-spacing:-.08em;margin:14px 0 12px}.subtitle{font-size:18px;color:#c9ddcf;max-width:660px}.muted{color:var(--muted)}.danger{color:var(--red)}.mono{font-family:var(--mono)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:30px;font-weight:950;letter-spacing:-.05em}.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button,.btn{min-height:48px;border:0;border-radius:15px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#04100b;font-weight:950;text-decoration:none;cursor:pointer}.secondary,button.secondary{background:#101d17;color:var(--ink);border:1px solid var(--line)}.ghost{background:transparent;color:var(--ink);border:1px dashed var(--line)}.bar{height:16px;border:1px solid #24483b;background:#10251e;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime))}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.step{padding:12px;border-radius:14px;background:#10251e;border:1px solid #24483b;color:var(--muted);font:12px var(--mono)}.done{border-color:var(--green);color:#b9ffdf}.locked{border:1px solid #ffd36a55;background:#ffd36a12;border-radius:18px;padding:14px}.safeBox{border:1px solid #35e09d44;background:#35e09d10;border-radius:18px;padding:14px}.addr{font-family:var(--mono);font-size:12px;word-break:break-all;color:#c9ddcf}.install{display:flex;flex-direction:column;gap:10px}pre{white-space:pre-wrap;word-break:break-word;background:#050907;border:1px solid var(--line);padding:14px;border-radius:14px;max-height:260px;overflow:auto}    code{font-family:var(--mono)}h2{font-size:22px;font-weight:800;margin:0 0 8px;letter-spacing:-.04em}h3{font-size:18px;font-weight:750;margin:0;letter-spacing:-.02em}#log{font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted);background:#050907;border:1px solid var(--line);padding:16px;border-radius:14px;min-height:120px;overflow:auto;max-height:400px}#demoBtn{min-height:44px;border:1px solid #35e09d44;border-radius:15px;padding:12px 20px;background:#0d1f18;color:var(--green);font-weight:800;cursor:pointer;transition:opacity .15s}#demoBtn:hover{opacity:.85}button:disabled,.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important}pre code{background:transparent;border:0;padding:0}
 
@@ -361,7 +361,7 @@
 <div class="wrap">
   <!-- 导航栏：增加钱包连接区域 -->
   <div class="nav">
-    <div class="brand">BIU / MINT SKILL</div>
+    <div class="brand">BIU</div>
     <div class="wallet-bar" id="walletBar">
       <!-- 未连接状态：钱包选择器 -->
       <div id="walletDisconnected">
@@ -414,13 +414,11 @@
       <h1>BIU</h1>
       <p class="subtitle">BIU 的 mint 采用 x402 支付协议 + Permit2 授权签名 + 自托管 facilitator / relayer 代付 gas。玩家钱包只需要准备 BSC 链上的 USDC，不需要准备 BNB；Agent 会先生成 quote / dry-run，确认后由 relayer 完成链上 mint。</p>
       <div class="ctaRow">
-        <a class="btn" href="#install">安装 Mint Skill</a>
-        <a class="btn secondary" href="#data">查看实时数据</a>
-        <a class="btn ghost" href="#contracts">合约地址</a>
-        <button class="btn" onclick="toggleWalletDropdown()" id="heroConnectBtn" style="background:linear-gradient(135deg,#35e09d,#dfff70)">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+        <button class="btn" onclick="toggleWalletDropdown()" id="heroConnectBtn" style="background:linear-gradient(135deg,#35e09d,#dfff70);font-size:16px;padding:12px 28px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
           连接钱包 · Mint
         </button>
+        <a class="btn ghost" href="#contracts">合约地址</a>
       </div>
       <div class="grid">
         <div class="safeBox"><div class="muted mono">钱包准备</div><div class="metric">只要 USDC</div><p class="muted">玩家钱包只需要 BSC USDC，不需要准备 BNB gas。</p></div>
@@ -429,21 +427,6 @@
         <div class="locked"><div class="muted mono">真实执行</div><b class="danger">必须确认后广播</b><p class="muted">Skill 默认只 dry-run，不签名、不扣款、不广播。</p></div>
       </div>
     </div></div>
-
-    <aside id="install" class="card install">
-      <div class="kicker">Mint Skill 安装</div>
-      <h2>给玩家 Agent 的安装说明</h2>
-      <p class="muted">复制/安装这个 Skill，让玩家 Agent 输入"mint 1 份 BIU"时，先生成报价和 dry-run。技术路径是 x402 + Permit2：玩家签授权，facilitator/relayer 代付 BNB gas，所以玩家只需要 USDC，不需要 BNB。</p>
-      <pre><code>agent-skill/bui-mint/SKILL.md</code></pre>
-      <p class="muted">验证安装：</p>
-      <pre><code>cd bsc-x402-launchpad
-node scripts/bui-mint.js agent-context --json --no-input
-./agent-skill/bui-mint/demo.sh</code></pre>
-      <p class="muted">玩家 Agent 常用命令：</p>
-      <pre><code>node scripts/bui-mint.js quote --payer &lt;玩家钱包&gt; --lots 1 --json --no-input
-node scripts/bui-mint.js dry-run --payer &lt;玩家钱包&gt; --lots 1 --json --no-input</code></pre>
-      <div class="pill">安全：signs=false · broadcasts=false · no private key</div>
-    </aside>
   </section>
 
   <!-- ===== 钱包信息 + Mint 操作面板 ===== -->
@@ -513,13 +496,6 @@ node scripts/bui-mint.js dry-run --payer &lt;玩家钱包&gt; --lots 1 --json --
     <div class="card"><div class="muted mono">已 mint BIU</div><div id="tokenLabel" class="metric">0</div><p class="muted">公平 mint 总量 500,000,000 BIU。</p></div>
     <div class="card"><div class="muted mono">USDC 募集</div><div id="escrowLabel" class="metric">0 / 6000 USDC</div><div class="bar"><div id="escrowBar" class="fill"></div></div></div>
     <div class="card"><div class="muted mono">池子状态</div><div id="poolLabel" class="metric">未开启</div><p class="muted">满 500 份后才进入 BIU/WBNB 池子流程。</p></div>
-  </section>
-
-  <section class="card">
-    <div class="kicker">Mint Skill 流程</div>
-    <div class="steps" id="steps"></div>
-    <div class="ctaRow"><button id="demoBtn">查看 dry-run 演示</button><span class="pill">网页只展示，不连接钱包</span></div>
-    <pre id="log">等待实时数据加载。Skill 真实 mint 仍需要 USDC 到账证明、安全预检、明确确认和链上复核。</pre>
   </section>
 
   <section id="contracts" class="card">
@@ -1117,33 +1093,8 @@ async function dryRunMint() {
   const qty = parseInt(document.getElementById('qtyInput').value) || 1;
   const cost = qty * 12;
 
-  paintSteps(4);
-  document.getElementById('log').textContent = [
-    '=== Dry-run 模拟（不广播、不扣款）===',
-    '',
-    'payer: ' + walletState.address,
-    'lots: ' + qty,
-    'usdcCost: ' + cost + ' USDC',
-    'biuReceived: ' + (qty * 1000000).toLocaleString('en-US') + ' BIU',
-    '',
-    '--- Permit2 typedData ---',
-    'token: ' + DEPLOYED.usdc,
-    'spender: ' + DEPLOYED.launchpad,
-    'amount: ' + parseUnits(String(cost), 18).toString(),
-    'expiration: ' + (Math.floor(Date.now()/1000) + 3600),
-    'nonce: (从链上获取)',
-    '',
-    '--- relayer calldata ---',
-    'contract: ' + DEPLOYED.launchpad,
-    'function: mint(uint256 lots, ISignatureTransfer.PermitTransferFrom, bytes signature)',
-    '',
-    'signs: false',
-    'broadcasts: false',
-    'executeBlocked: true',
-    '',
-    '✓ Dry-run 完成。真实 mint 需要 USDC 到账 + 明确确认。'
-  ].join('\n');
-
+  const msg = `${qty}份 × ${cost} USDC = ${(qty*1000000).toLocaleString('en-US')} BIU | 不签名、不广播、不扣款`;
+  showTxStatus(msg, null);
   showToast('Dry-run 模拟完成，未广播任何交易', 'success');
 }
 
@@ -1312,7 +1263,6 @@ async function executeMintWithPermit2(lots) {
           if (txHash) {
             showToast('Mint 交易已提交！', 'success');
             showTxStatus('Mint 交易已提交，等待链上确认…', txHash);
-            paintSteps(7);
             btn.disabled = false;
             btn.textContent = '执行 Mint';
             setTimeout(refreshBalances, 5000);
@@ -1332,7 +1282,6 @@ async function executeMintWithPermit2(lots) {
       if (txHash) {
         showToast('Mint 交易已提交！', 'success');
         showTxStatus('Mint 交易已提交（直接调用合约）', txHash);
-        paintSteps(7);
         btn.disabled = false;
         btn.textContent = '执行 Mint';
         setTimeout(refreshBalances, 5000);
@@ -1344,25 +1293,18 @@ async function executeMintWithPermit2(lots) {
   }
 
   // Relayer 和直接调用都不可用，保存签名信息
-  showTxStatus('Permit2 签名已获取，等待 relayer 可用', null);
-  document.getElementById('log').textContent = [
+  showTxStatus(null, null, [
     '=== Permit2 签名已获取（relayer 暂不可用）===',
-    '',
     'payer: ' + walletState.address,
     'lots: ' + lots,
     'amount: ' + formatUnits(amount, 18) + ' USDC',
     'nonce: ' + nonce,
     'deadline: ' + deadline + ' (≈' + new Date(Number(deadline) * 1000).toLocaleString() + ')',
     'signature: ' + signature.slice(0, 32) + '...',
-    '',
-    '⚠️ 所有 relayer endpoint 和直接合约调用均不可用。',
-    '   签名在 deadline 前有效，可稍后重试或手动提交。',
-    '   命令行备选：node scripts/bui-mint.js mint --payer ' + walletState.address + ' --lots ' + lots
-  ].join('\n');
-
+    '⚠️ 签名在 deadline 前有效，可稍后重试。'
+  ].join('\n'));
   btn.disabled = false;
   btn.textContent = '执行 Mint';
-  paintSteps(5);
 }
 
 // 直接调用 launchpad 合约 mint
@@ -1417,52 +1359,37 @@ async function directContractMint(lots, permit, signature) {
 function showTxStatus(msg, txHash, extra) {
   const el = document.getElementById('txStatus');
   el.classList.add('visible');
-  let html = msg;
+  let html = msg || '';
   if (txHash) {
-    html += `\n<a class="tx-link" href="https://bscscan.com/tx/${txHash}" target="_blank">查看交易 ${txHash.slice(0,12)}...${txHash.slice(-6)}</a>`;
+    html += `${html?'\\n':''}<a class="tx-link" href="https://bscscan.com/tx/${txHash}" target="_blank">查看交易 ${txHash.slice(0,12)}...${txHash.slice(-6)}</a>`;
   }
   if (extra) {
-    html += '\n' + extra;
+    html += `${html?'\\n':''}${extra}`;
   }
-  el.innerHTML = html.replace(/\n/g, '<br>');
+  el.innerHTML = html.replace(/\n/g, '<br>') || '—';
 }
 
 // =============================================
-// 原有功能
+// 数据实况轮询
 // =============================================
-const basePath="/launches/demo", pollMs=5000;
+const POLL_MS = 5000;
 const $=id=>document.getElementById(id);
-const els={mintLabel:$('mintLabel'),tokenLabel:$('tokenLabel'),escrowLabel:$('escrowLabel'),poolLabel:$('poolLabel'),mintBar:$('mintBar'),escrowBar:$('escrowBar'),steps:$('steps'),log:$('log'),demoBtn:$('demoBtn')};
-const stepNames=['安装 Mint Skill','输入 mint 1 份 BIU','Agent 输出 quote','Agent 执行 dry-run','玩家钱包签名/授权','验证 USDC 到账','确认后 relayer mint'];
+const els={mintLabel:$('mintLabel'),tokenLabel:$('tokenLabel'),escrowLabel:$('escrowLabel'),poolLabel:$('poolLabel'),mintBar:$('mintBar'),escrowBar:$('escrowBar')};
 
 function fmt(n){return Number(n||0).toLocaleString('en-US')}
-function paintSteps(active=3){els.steps.innerHTML=stepNames.map((s,i)=>'<div class="step '+(i<active?'done':'')+'">'+(i+1)+'. '+s+'</div>').join('')}
 function applyStatus(status={}){const t=status.tokenomics||TOKENOMICS;const q=Number(status.queuedMints||0);const max=Number(t.maxMintCount||500);const minted=q*Number(t.mintAmount||1000000);const escrow=status.escrow||{};const collected=Number(escrow.collected||0);const target=Number(escrow.target||t.saleTargetUsdc||6000);els.mintLabel.textContent=q+' / '+max+' 份';els.tokenLabel.textContent=fmt(minted)+' BIU';els.escrowLabel.textContent=fmt(collected)+' / '+fmt(target)+' USDC';els.poolLabel.textContent=escrow.readyForPool?'可进入开池':'未开启';els.mintBar.style.width=Math.min(100,q/max*100)+'%';els.escrowBar.style.width=target?Math.min(100,collected/target*100)+'%':'0%'}
 
 async function refresh(){
-  const urls=['./status.json',basePath+'/status'];
-  for(const u of urls){
-    try{
-      const r=await fetch(u,{cache:'no-store'});
-      if(!r.ok)throw new Error('status '+r.status);
-      const data=await r.json();
-      applyStatus(data);
-      els.log.textContent='半实时数据已加载：来源 '+(data.source||'status.json')+'\n更新时间：'+(data.generatedAt||'未知')+'\n\n网页只展示数据；真实 mint 请通过玩家 Agent Skill 走确认流程。';
-      return;
-    }catch(e){}
-  }
-  applyStatus({});
-  els.log.textContent='当前是静态展示模式：status.json 和后端实时接口都不可用。Skill 安装和 dry-run 命令仍可复制使用。';
+  try{
+    const r=await fetch('./status.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('status '+r.status);
+    const data=await r.json();
+    applyStatus(data);
+  }catch(e){applyStatus({})}
 }
 
-els.demoBtn.addEventListener('click',()=>{
-  paintSteps(4);
-  els.log.textContent='dry-run 演示：12 USDC -> 1,000,000 BIU；生成 Permit2 typedData 和 relayer calldata；signs=false；broadcasts=false；executeBlocked=true。';
-});
-
-paintSteps(3);
 refresh();
-setInterval(refresh,pollMs);
+setInterval(refresh,POLL_MS);
 
 // =============================================
 // 钱包事件监听（多钱包支持）
