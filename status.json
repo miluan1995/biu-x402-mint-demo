@@ -2,7 +2,7 @@
   "ok": true,
   "mode": "bui_github_pages_status_json",
   "source": "bsc_rpc",
-  "generatedAt": "2026-05-21T11:35:28.756Z",
+  "generatedAt": "2026-05-21T11:40:24.206Z",
   "updateHint": "GitHub Pages semi-realtime snapshot; regenerate/push periodically for fresh data.",
   "error": null,
   "deployed": {
@@ -16,7 +16,7 @@
     "rpc": "https://bsc-dataseed.binance.org/"
   },
   "launchId": "bui-mainnet",
-  "blockNumber": 99573630,
+  "blockNumber": 99574286,
   "chainId": 56,
   "launchState": 1,
   "tokenomics": {
