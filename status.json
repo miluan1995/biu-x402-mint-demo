@@ -1,10 +1,10 @@
 {
-  "ok": false,
+  "ok": true,
   "mode": "bui_github_pages_status_json",
-  "source": "fallback_rpc_error",
-  "generatedAt": "2026-05-22T21:25:28.807Z",
+  "source": "bsc_rpc",
+  "generatedAt": "2026-05-22T21:35:27.863Z",
   "updateHint": "GitHub Pages semi-realtime snapshot; regenerate/push periodically for fresh data.",
-  "error": "fetch failed",
+  "error": null,
   "deployed": {
     "chain": "bsc",
     "network": "eip155:56",
@@ -16,9 +16,9 @@
     "rpc": "https://bsc-dataseed.binance.org/"
   },
   "launchId": "bui-mainnet",
-  "blockNumber": null,
+  "blockNumber": 99845292,
   "chainId": 56,
-  "launchState": null,
+  "launchState": 1,
   "tokenomics": {
     "totalSupply": 1000000000,
     "fairMint": 500000000,
@@ -60,8 +60,8 @@
   "escrow": {
     "asset": "USDC",
     "payTo": "0x11e82531407413f94fc9f6c8e99b5df0c76bb83f",
-    "collectedRaw": "0",
-    "collected": "0",
+    "collectedRaw": "192207603233508059",
+    "collected": "0.192207603233508059",
     "targetRaw": "6000000000000000000000",
     "target": "6000",
     "percent": 0,
